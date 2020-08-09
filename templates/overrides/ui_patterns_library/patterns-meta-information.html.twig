@@ -1,0 +1,59 @@
+{#
+/**
+ * @file
+ * UI Pattern meta information.
+ */
+#}
+
+{% if pattern is not empty %}
+
+  {# Pattern name and desciption. #}
+  <h3 class="pattern-preview__label mdc-typography--headline3">{{ pattern.label }}</h3>
+  <p class="pattern-preview__description">{{ pattern.description }}</p>
+
+  {# Pattern fields descriptions. #}
+  {% if pattern.fields or pattern.additional.settings %}
+  <div class="mdc-data-table">
+  <table class="pattern-preview__fields mdc-data-table__table">
+    <thead>
+    <tr class="mdc-data-table__header-row">
+      <td class="mdc-data-table__header-cell"></td>
+      <th class="mdc-data-table__header-cell">{{ "Name"|t }}</th>
+      <th class="mdc-data-table__header-cell">{{ "Label"|t }}</th>
+      <th class="mdc-data-table__header-cell">{{ "Type"|t }}</th>
+      <th class="mdc-data-table__header-cell">{{ "Description"|t }} / {{ "Options"|t }}</th>
+    </tr>
+    </thead>
+    <tbody class="mdc-data-table__content">
+    {% for field in pattern.fields %}
+      <tr class="mdc-data-table__row">
+        <td class="mdc-data-table__cell">{{ "Field"|t }}</td>
+        <td class="mdc-data-table__cell"><code>{{ field.name }}</code></td>
+        <td class="mdc-data-table__cell">{{ field.label }}</td>
+        <td class="mdc-data-table__cell"><code>{{ field.type }}</code></td>
+        <td class="mdc-data-table__cell">{{ field.description }}</td>
+      </tr>
+    {% endfor %}
+    {% for name, setting in pattern.additional.settings %}
+      <tr class="mdc-data-table__row">  
+        <td class="mdc-data-table__cell">{{ "Setting"|t }}</td>
+        <td class="mdc-data-table__cell"><code>{{ name }}</code></td>
+        <td class="mdc-data-table__cell">{{ setting.label }}</td>
+        <td class="mdc-data-table__cell"><code>{{ setting.type }}</code></td>
+        <td class="mdc-data-table__cell">{{ setting.description }}
+        {% if setting.options %}
+        <ul>
+        {% for key, label in setting.options %}
+          <li>{{ key }}: {{ label }}</li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  {% endif %}
+
+{% endif %}

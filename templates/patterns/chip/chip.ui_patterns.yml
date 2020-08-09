@@ -1,0 +1,17 @@
+chip:
+  label: Chip
+  description: Chips are compact elements that allow users to enter information, select a choice, filter content, or trigger an action. https://material.io/develop/web/components/chips
+  variants:
+    default:
+      label: Default
+    selected:
+      label: Pre-selected
+      descrition: Useful only inside a 'choice' chip set.
+    touch:
+      label: Touch
+  fields:
+    text:
+      type: text
+      label: Text
+      description: The chip text
+      preview: Add to calendar

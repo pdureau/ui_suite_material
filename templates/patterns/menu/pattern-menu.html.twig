@@ -1,0 +1,40 @@
+{% if variant != '' and variant|lower != 'default' %}
+  {% set attributes = attributes.addClass('mdc-menu--' ~ variant|lower|replace({'_': '-'})) %}
+{% endif %}
+
+{% import _self as menus %}
+
+<div{{ attributes.addClass('mdc-menu').addClass('mdc-menu-surface').addClass('mdc-menu-surface--open') }} >
+  {{ menus.menu_links(items, attributes, 0) }}
+</div>
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% if menu_level == 0 %}
+      <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
+      {% for item in items %}
+          {% set item_attributes = item.attributes ?: create_attribute() %}
+          {% if item.below %}
+          <li{{ item_attributes.addClass('mdc-list-item').setAttribute('role', 'menuitem') }}>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{ item.title }}
+            </a>
+            {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+          </li>
+          {% else %}
+          <li{{ item_attributes.addClass('mdc-list-item') }}>
+            <a class="mdc-list-item__text" href="{{ item.url }}">{{ item.title }}</a>
+          </li>
+          {% endif %}
+      {% endfor %}
+      </ul>
+    {% else %}
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      {% for item in items %}
+        <a class="dropdown-item" href="{{ item.url }}">{{ item.title }}</a>
+      {% endfor %}
+      </div>
+    {% endif %}
+  {% endif %}
+{% endmacro %}

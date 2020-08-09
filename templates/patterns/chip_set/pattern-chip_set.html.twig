@@ -1,0 +1,10 @@
+{% if variant != '' and variant|lower != 'default' %}
+  {% set variants = variant|split('__') %}
+  {% for variant in variants %}
+    {% set attributes = attributes.addClass('mdc-chip-set--' ~ variant|lower|replace({'_': '-'})) %}
+  {% endfor %}
+{% endif %}
+
+<div{{ attributes.addClass('mdc-chip-set').setAttribute('role', 'grid') }}>
+  {{ chips }}
+</div>

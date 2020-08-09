@@ -1,0 +1,18 @@
+{% if variant != '' and variant|lower != 'default' %}
+  {% set variants = variant|split('__') %}
+  {% for variant in variants %}
+    {% set attributes = attributes.addClass('mdc-chip--' ~ variant|lower|replace({'_': '-'})) %}
+  {% endfor %}
+{% endif %}
+
+<div{{ attributes.addClass('mdc-chip') }}>
+  <div class="mdc-chip__ripple"></div>
+  <span role="gridcell">
+    <span role="button" tabindex="0" class="mdc-chip__primary-action">
+      {% if variant|lower == 'touch' %}
+      <div class="mdc-chip__touch"></div>
+      {% endif %}
+      <span class="mdc-chip__text">{{ text }}</span>
+    </span>
+  </span>
+</div>

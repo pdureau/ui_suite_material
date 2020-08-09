@@ -1,0 +1,15 @@
+{% if variant != '' and variant|lower != 'default' %}
+  {% set variants = variant|split('__') %}
+  {% for variant in variants %}
+    {% set attributes = attributes.addClass('mdc-list--' ~ variant|lower|replace({'_': '-'})) %}
+  {% endfor %}
+{% endif %}
+
+<ul{{ attributes.addClass('mdc-list') }}>
+  {% for item in items %}
+  <li class="mdc-list-item" tabindex="0">
+    <span class="mdc-list-item__ripple"></span>
+    <span class="mdc-list-item__text">{{ item }}</span>
+  </li>
+  {% endfor %}
+</ul>

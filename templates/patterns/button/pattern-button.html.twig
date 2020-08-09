@@ -1,0 +1,16 @@
+{% if variant != '' and variant|lower != 'default' %}
+  {% set variants = variant|split('__') %}
+  {% for variant in variants %}
+    {% set attributes = attributes.addClass('mdc-button--' ~ variant|lower|replace({'_': '-'})) %}
+  {% endfor %}
+{% endif %}
+
+{% if url or attributes.href %}
+  {% set url = url ?: attributes.href %}
+  <a{{ attributes.addClass('mdc-button').setAttribute('href', url) }}>{{ label }}</a>
+{% else %}
+  <div{{ attributes.addClass('mdc-button') }}>
+    <div class="mdc-button__ripple"></div>
+    <span class="mdc-button__label">{{ label }}</span>
+  </div>
+{% endif %}

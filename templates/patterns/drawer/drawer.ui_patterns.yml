@@ -1,0 +1,16 @@
+drawer:
+  label: Navigation drawer
+  description: Navigation drawers provide access to destinations in your app. https://material.io/develop/web/components/navigation-drawer
+  variants:
+    default:
+      label: Default
+    modal:
+      label: Modal
+    dismissible:
+      label: Dismissible
+  fields:
+    text:
+      type: text
+      label: Text
+      description: The chip text
+      preview: Add to calendar

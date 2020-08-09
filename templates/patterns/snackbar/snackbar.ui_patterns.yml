@@ -1,0 +1,18 @@
+snackbar:
+  label: Snackbar
+  description: Snackbars provide brief messages about app processes at the bottom of the screen. https://material.io/develop/web/components/snackbars
+  variants:
+    default:
+      label: Default
+    open:
+      label: Open
+      descrition: Indicates that the snackbar is open and visible.
+    stacked:
+      label: Stacked
+      description: Positions the action button/icon below the label instead of alongside it.
+  fields:
+    text:
+      type: text
+      label: Text
+      description: The chip text
+      preview: Add to calendar

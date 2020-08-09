@@ -1,0 +1,25 @@
+top_app_bar:
+  label: Top app bar
+  description: The top app bar provides content and actions related to the current screen. It’s used for branding, screen titles, navigation, and actions. https://material.io/develop/web/components/top-app-bar
+  variants:
+    default:
+      label: Default
+    short:
+      label: Short
+    dense:
+      label: Dense
+    prominent:
+      label: Prominent
+    # TODO: Fixed as a setting
+    # TODO: Ajust as a setting
+  fields:
+    label:
+      type: text
+      label: Label
+      description: The button label
+      preview: Submit
+    url:
+      type: text
+      label: URL
+      description: The button URL. Optional.
+      preview: http://example.com

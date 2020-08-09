@@ -1,0 +1,33 @@
+# https://material.io/develop/web/components/typography
+typography:
+  label: Typography
+  description: "Material Design's text sizes and styles were developed to balance content density and reading comfort under typical usage conditions. https://material.io/develop/web/components/typography"
+  options:
+    mdc-typography--headline1: Headline variant 1. The largest text on the screen, reserved for short, important text or numerals.
+    mdc-typography--headline2: Headline variant 2
+    mdc-typography--headline3: Headline variant  3
+    mdc-typography--headline4: Headline variant  4
+    mdc-typography--headline5: Headline variant  5
+    mdc-typography--headline6: Headline variant  6
+    mdc-typography--subtitle1: Smaller than headline, reserved for medium-emphasis text that is shorter in length.
+    mdc-typography--subtitle2: Subtitle variant 2
+    mdc-typography--body1: Used for long-form writing
+    mdc-typography--body2: Body variant 2
+    mdc-typography--caption: Used sparingly to annotate imagery
+    mdc-typography--button: A call to action used by different types of buttons
+    mdc-typography--overline: Used sparingly to introduce a headline
+
+# https://material.io/develop/web/docs/theming
+theme:
+  label: Theming
+  description: "MDC Web includes a theming system designed to make it easy to change your application's colors. It provides multiple options for implementing themes, allowing for maximum flexibility. https://material.io/develop/web/docs/theming"
+  options:
+    mdc-theme--primary: Primary. Sets the text color to the theme primary color.
+    mdc-theme--primary-bg: Sets the background color to the theme primary color.
+    mdc-theme--on-primary: Sets the text color to the color configured for text on the primary color.
+    mdc-theme--secondary: Sets the text color to the theme secondary color.
+    mdc-theme--secondary-bg: Sets the background color to the theme secondary color.
+    mdc-theme--on-secondary: Sets the text color to the color configured for text on the secondary color.
+    mdc-theme--surface: Sets the background color to the surface background color.
+    mdc-theme--on-surface: Sets the text color to the color configured for text on the surface color.
+    mdc-theme--background: Sets the background color to the theme background color.

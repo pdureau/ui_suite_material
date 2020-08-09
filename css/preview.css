@@ -1,0 +1,16 @@
+.pattern-preview__markup .mdc-top-app-bar {
+  position: static;
+}  
+
+.pattern-preview__markup .mdc-snackbar {
+  position: static;
+}
+
+.pattern-preview__markup .mdc-menu-surface {
+  position: static;
+}  
+
+.pattern-preview__markup .mdc-drawer--modal {
+  display: flex;
+  position: static;
+}

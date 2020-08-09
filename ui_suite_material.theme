@@ -1,0 +1,31 @@
+<?php
+
+use Drupal\Core\Template\Attribute;
+
+/**
+ * @file
+ * The ui_suite_material hooks.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK() for card patterns.
+ *
+ * See also: https://material.io/develop/web/components/cards.
+ */
+function ui_suite_material_preprocess_pattern_card(array &$variables) {
+  if ($variables['context']->getType() == 'preview') {
+    $variables['attributes']['style'] = "width: 600px";
+  }
+    
+  if (array_key_exists('action_buttons', $variables) && is_array($variables['action_buttons'])) {
+    foreach ($variables['action_buttons'] as &$item) {
+      $item['#attributes']['class'][] = 'mdc-card__action';
+      $item['#attributes']['class'][] = 'mdc-card__action--button';
+    }
+  }
+  if (array_key_exists('action_icons', $variables) && is_array($variables['action_icons'])) {
+    foreach ($variables['action_icons'] as &$item) {
+      $item['#attributes']['class'][] = 'yo';
+    }
+  }
+}

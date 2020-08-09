@@ -1,0 +1,18 @@
+{% if variant != '' and variant|lower != 'default' %}
+  {% set variants = variant|split('__') %}
+  {% for variant in variants %}
+    {% set attributes = attributes.addClass('mdc-slider--' ~ variant|lower|replace({'_': '-'})) %}
+  {% endfor %}
+{% endif %}
+
+<div{{ attributes.addClass('mdc-slider').setAttribute('tabindex', 0).setAttribute('role', 'slider').setAttribute('aria-valuemin', 0).setAttribute('aria-valuenow', 0).setAttribute('aria-valuemax', 100).setAttribute('aria-label', "Select Value") }}>
+  <div class="mdc-slider__track-container">
+    <div class="mdc-slider__track"></div>
+  </div>
+  <div class="mdc-slider__thumb-container">
+    <svg class="mdc-slider__thumb" width="21" height="21">
+      <circle cx="10.5" cy="10.5" r="7.875"></circle>
+    </svg>
+    <div class="mdc-slider__focus-ring"></div>
+  </div>
+</div>

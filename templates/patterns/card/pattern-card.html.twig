@@ -1,0 +1,30 @@
+{% if variant != '' and variant|lower != 'default' %}
+  {% set variants = variant|split('__') %}
+  {% for variant in variants %}
+    {% set attributes = attributes.addClass('mdc-card--' ~ variant|lower|replace({'_': '-'})) %}
+  {% endfor %}
+{% endif %}
+
+<div{{ attributes.addClass('mdc-card') }}>
+  <div class="mdc-card__primary-action">
+    <div class="mdc-card__media">
+      {# todo: media scale #}
+      <div class="mdc-card__media-content">{{ title }}</div>
+    </div>
+    <!-- ... additional primary action content ... -->
+  {% if action_buttons or action_icons %}
+  <div class="mdc-card__actions">
+    {% if action_buttons %}
+    <div class="mdc-card__action-buttons">
+      {{ action_buttons }}
+    </div>
+    {% endif %}
+    {% if action_icons %}
+    <div class="mdc-card__action-icons">
+      {{ action_icons }}
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+  </div>
+</div>

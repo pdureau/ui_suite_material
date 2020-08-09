@@ -1,0 +1,17 @@
+material:
+  remote: https://material.io/
+  license:
+    name: MIT
+    gpl-compatible: false
+  js:
+    "https://unpkg.com/material-components-web/dist/material-components-web.min.js": { minified: true }
+  css:
+    theme:
+      "https://unpkg.com/material-components-web/dist/material-components-web.min.css": { minified: true }
+      "https://fonts.googleapis.com/icon?family=Material+Icons": {}
+      "https://fonts.googleapis.com/css?family=Roboto:300,400,500": {}
+    
+preview:
+  css:
+    theme:
+      "css/preview.css": {}

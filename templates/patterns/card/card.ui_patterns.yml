@@ -1,0 +1,48 @@
+card:
+  label: Card
+  description: Cards contain content and actions about a single subject. https://material.io/develop/web/components/cards
+  variants:
+    default:
+      label: Default
+    outlined:
+      label: Outlined
+  settings:
+    media_scale:
+      type: select
+      label: Media scale
+      options:
+        "": Default
+        "square": Square
+        "16-9": "16-9"
+  fields:
+    title:
+      type: text
+      label: Title
+      description: The card title
+      preview: Title
+    action_buttons:
+      type: render
+      label: Action buttons
+      description: The card action buttons
+      preview:
+        - type: "pattern"
+          id: "button"
+          fields:
+            label: "Action 1"
+        - type: "pattern"
+          id: "button"
+          fields:
+            label: "Action 2"
+    action_icons:
+      type: render
+      label: Action icons
+      description: The card action icons
+      preview:
+        - type: "pattern"
+          id: "button"
+          fields:
+            label: "Share"
+        - type: "pattern"
+          id: "button"
+          fields:
+            label: "More options"

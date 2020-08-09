@@ -1,0 +1,31 @@
+chip_set:
+  label: Chip set
+  description: XXX https://material.io/develop/web/components/chips
+  variants:
+    default:
+      label: Default
+    input:
+      label: Input
+      description: Indicates that the chips in the set are input chips, which enable user input by converting text into chips.
+    choice:
+      label: Choice
+      description: Indicates that the chips in the set are choice chips, which allow a single selection from a set of options.
+    filter:
+      label: Filter
+      description: Optional. Indicates that the chips in the set are filter chips, which allow multiple selection from a set of options.
+  fields:
+    chips:
+      type: render
+      label: Chips
+      description: The chip patterns.
+      preview:
+        - type: pattern
+          id: chip
+          variant: selected
+          text: Chip One
+        - type: pattern
+          id: chip
+          text: Chip Two
+        - type: pattern
+          id: chip
+          text: Chip Three

@@ -1,0 +1,24 @@
+fab:
+  label: Floating action button
+  description: A floating action button (FAB) represents the primary action of a screen. https://material.io/develop/web/components/buttons/floating-action-buttons
+  variants:
+    default:
+      label: Default
+    mini:
+      label: Mini
+    touch:
+      label: Touch
+    extended:
+      label: Extended
+      description: Modifies the FAB to wider size which includes a text label.
+    exited:
+      label: Exited
+      description: Animates the FAB out of view.
+    mini__touch:
+      label: Mini & Touch
+  fields:
+    text:
+      type: text
+      label: Text
+      description: The chip text
+      preview: Add to calendar
