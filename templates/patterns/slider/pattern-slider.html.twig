@@ -5,14 +5,15 @@
   {% endfor %}
 {% endif %}
 
-<div{{ attributes.addClass('mdc-slider').setAttribute('tabindex', 0).setAttribute('role', 'slider').setAttribute('aria-valuemin', 0).setAttribute('aria-valuenow', 0).setAttribute('aria-valuemax', 100).setAttribute('aria-label', "Select Value") }}>
-  <div class="mdc-slider__track-container">
-    <div class="mdc-slider__track"></div>
+<div{{ attributes.addClass('mdc-slider') }}>
+  <input class="mdc-slider__input" type="range" min="{{ min }}" max="{{ max }}" value="{{ value }}" name="{{ name }}" aria-label="{{ label }}">
+  <div class="mdc-slider__track">
+    <div class="mdc-slider__track--inactive"></div>
+    <div class="mdc-slider__track--active">
+      <div class="mdc-slider__track--active_fill"></div>
+    </div>
   </div>
-  <div class="mdc-slider__thumb-container">
-    <svg class="mdc-slider__thumb" width="21" height="21">
-      <circle cx="10.5" cy="10.5" r="7.875"></circle>
-    </svg>
-    <div class="mdc-slider__focus-ring"></div>
+  <div class="mdc-slider__thumb">
+    <div class="mdc-slider__thumb-knob"></div>
   </div>
 </div>

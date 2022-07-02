@@ -1,0 +1,19 @@
+{% set attributes = gutters ? attributes.addClass(gutters) : attributes %}
+{% set attributes = gutters_horizontal ? attributes.addClass(gutters_horizontal) : attributes %}
+{% set attributes = gutters_vertical ? attributes.addClass(gutters_vertical) : attributes %}
+
+<div{{ attributes.addClass('mdc-layout-grid"') }}>
+  <div class="mdc-layout-grid__inner">
+  {% set cell_attributes = create_attribute().addClass('mdc-layout-grid__cell') %}
+  {% set cell_attributes = span? cell_attributes.addClass('mdc-layout-grid__cell--span-' ~ span): cell_attributes %}
+  {% set cell_attributes = span_phone? cell_attributes.addClass('mdc-layout-grid__cell--span-'  ~ span_phone ~ '--phone'): cell_attributes %}
+  {% set cell_attributes = span_tablet? cell_attributes.addClass('mdc-layout-grid__cell--span-'  ~ span_tablet ~ '--tablet'): cell_attributes %}
+  {% set cell_attributes = span_desktop? cell_attributes.addClass('mdc-layout-grid__cell--span-'  ~ span_desktop ~ '--desktop'): cell_attributes %}
+  {% set cell_attributes = align? cell_attributes.addClass('mdc-layout-grid__cell--align-'  ~ align): cell_attributes %}
+  {% for item in content %}
+    <div{{ cell_attributes }}>
+      {{ item }}
+    </div>
+  {% endfor %}
+  </div>
+</div>

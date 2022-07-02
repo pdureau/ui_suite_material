@@ -1,6 +1,6 @@
 drawer:
   label: Navigation drawer
-  description: Navigation drawers provide access to destinations in your app. https://material.io/develop/web/components/navigation-drawer
+  description: Navigation drawers provide access to destinations in your app. https://material.io/components/navigation-drawer
   variants:
     default:
       label: Default
@@ -9,8 +9,16 @@ drawer:
     dismissible:
       label: Dismissible
   fields:
-    text:
-      type: text
-      label: Text
-      description: The chip text
-      preview: Add to calendar
+    items:
+      type: array
+      label: Items
+      description: "A nested list of menu items. Each menu item contains: attributes: HTML attributes for the menu item. below: The menu item child items. title: The menu link title. url: The menu link url. Only the first level is rendered."
+      preview:
+        - title: Inbox
+          url: "#"
+          attributes:
+            class: ["active"]
+        - title: Outgoing
+          url: "#"
+        - title: Drafts
+          url: "#"

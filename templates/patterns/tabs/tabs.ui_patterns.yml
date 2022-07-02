@@ -1,0 +1,16 @@
+tabs:
+  label: Tabs
+  description: Tabs organize content across different screens, data sets, and other interactions. https://material.io/components/tabs/web
+  fields:
+    tabs:
+      type: render
+      label: Tabs
+      description: Renderable tabs patterns.
+      preview:
+        - type: pattern_preview
+          id: tab
+          variant: active
+        - type: pattern_preview
+          id: tab
+        - type: pattern_preview
+          id: tab

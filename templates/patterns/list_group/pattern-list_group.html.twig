@@ -1,0 +1,14 @@
+<ul{{ attributes.addClass('mdc-list-group') }}>
+  {% set heading_level = heading_level|default('3') %}
+  {% for item in lists %}
+    {% if (item is iterable and item.title) and item.url %}
+      <h{{ heading_level }} class="mdc-list-group__subheader"><a href="{{ item.url }}">{{  item.title }}</a></h{{ heading_level }}>
+      {{ pattern('list', {'items': item.below}) }}
+    {% elseif (item is iterable and item.title) and not item.url %}
+      <h{{ heading_level }} class="mdc-list-group__subheader">{{  item.title }}</h{{ heading_level }}>
+      {{ pattern('list', {'items': item.below}) }}
+    {% elseif item is not iterable %}
+      <h{{ heading_level }} class="mdc-list-group__subheader">{{ item }}</h{{ heading_level }}>
+    {% endif %}
+  {% endfor %}
+</ul>

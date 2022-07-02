@@ -27,20 +27,9 @@
   {% for pattern_name, pattern in patterns %}
 
     <div class="pattern-preview pattern-preview__{{ pattern.definition.id }}">
-      {# Pattern name and desciption. #}
-      <a name="{{ pattern_name }}"></a>
+      <h3 class="pattern-preview__label mdc-typography--headline3" id="{{ pattern.definition.id }}"><a href="{{ url('ui_patterns.patterns.single', {'name': pattern.definition.id}) }}">{{ pattern.label }}</a></h3>
       {{ pattern.meta }}
-
-      {# Link to standalone pattern preview page.#}
-      <p class="my-3">
-        <a href="{{ url('ui_patterns.patterns.single', {'name': pattern_name}) }}" class="pattern-preview__view">
-          {% trans %}View {{ pattern.label }} as stand-alone{% endtrans %}
-        </a>
-      </p>
-
-      {# Rendered pattern preview. #}
       {{ pattern.rendered }}
-
     </div>
 
     <hr class="my-5">

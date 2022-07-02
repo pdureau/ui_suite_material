@@ -14,7 +14,7 @@ use Drupal\Core\Template\Attribute;
  */
 function ui_suite_material_preprocess_pattern_card(array &$variables) {
   if ($variables['context']->getType() == 'preview') {
-    $variables['attributes']['style'] = "width: 600px";
+    $variables['attributes']['style'] = "max-width: 600px";
   }
     
   if (array_key_exists('action_buttons', $variables) && is_array($variables['action_buttons'])) {

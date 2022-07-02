@@ -7,9 +7,15 @@
 
 <ul{{ attributes.addClass('mdc-list') }}>
   {% for item in items %}
-  <li class="mdc-list-item" tabindex="0">
+  <li class="mdc-list-item">
     <span class="mdc-list-item__ripple"></span>
-    <span class="mdc-list-item__text">{{ item }}</span>
+    {% if item is iterable and item.title and item.url %}
+    <a href="{{ item.url }}" class="mdc-list-item__text">{{  item.title }}</a>
+    {% elseif item is iterable and item.title and not item.url %}
+    <span class="mdc-list-item__text">{{  item.title }}</span>
+    {% elseif item is not iterable %}
+    <span class="mdc-list-item__text">{{  item }}</span>
+    {% endif %}
   </li>
   {% endfor %}
 </ul>

@@ -8,14 +8,31 @@ slider:
       label: Discrete
     display-markers:
       label: "Display tracker markers (discrete slider only)"
+    disabled:
+      label: Disabled
   fields:
+    value:
+      type: integer
+      label: Value
+      preview: 50
+    min:
+      type: integer
+      label: Minimum
+      preview: 0
+    max:
+      type: integer
+      label: Maximum
+      preview: 100
+    name:
+      type: text
+      label: Machine name
+      preview: volume
     label:
       type: text
       label: Label
-      description: The button label
-      preview: Submit
-    url:
-      type: text
-      label: URL
-      description: The button URL. Optional.
-      preview: http://example.com
+      description: Not displayed. For accessibility.
+      preview: Continuous slider demo
+  libraries:
+    - slider_init:
+        js:
+          slider_init.js: {}

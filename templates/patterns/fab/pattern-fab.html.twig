@@ -5,7 +5,16 @@
   {% endfor %}
 {% endif %}
 
+{% if 'touch' in variant %}
+<div class="mdc-touch-target-wrapper">
+{% endif %}
 <button{{ attributes.addClass('mdc-fab').setAttribute('aria-label', 'Favorite') }}>
   <div class="mdc-fab__ripple"></div>
   <span class="mdc-fab__icon material-icons">favorite</span>
+  {% if label and variant == 'extended' %}
+  <span class="mdc-fab__label">{{ label }}</span>
+  {% endif %}
 </button>
+{% if 'touch' in variant %}
+</div>
+{% endif %}

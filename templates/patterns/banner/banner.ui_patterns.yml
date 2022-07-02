@@ -1,11 +1,13 @@
-card:
-  label: Card
-  description: Cards contain content and actions about a single subject. https://material.io/components/cards
+banner:
+  label: Banner
+  description: A banner displays a prominent message and related optional actions. https://material.io/components/banners
   variants:
     default:
       label: Default
-    outlined:
-      label: Outlined
+    centered:
+      label: Centered
+    mobile_stacked:
+      label: Mobile stacked
   settings:
     media_scale:
       type: select
@@ -46,3 +48,7 @@ card:
           id: "button"
           fields:
             label: "More options"
+  libraries:
+    - banner_init:
+        js:
+          banner_init.js: {}

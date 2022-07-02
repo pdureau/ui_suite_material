@@ -1,0 +1,22 @@
+{% if variant != '' and variant|lower != 'default' %}
+  {% set variants = variant|split('__') %}
+  {% for variant in variants %}
+    {% set attributes = attributes.addClass('mdc-banner--' ~ variant|lower|replace({'_': '-'})) %}
+  {% endfor %}
+{% endif %}
+
+<div{{ attributes.addClass('mdc-banner').setAttribute('role', 'banner') }}>
+  <div class="mdc-banner__content" role="alertdialog" aria-live="assertive">
+    <div class="mdc-banner__graphic-text-wrapper">
+      <div class="mdc-banner__text">
+        There was a problem processing a transaction on your credit card.
+      </div>
+    </div>
+    <div class="mdc-banner__actions">
+      <button type="button" class="mdc-button mdc-banner__primary-action">
+        <div class="mdc-button__ripple"></div>
+        <div class="mdc-button__label">Fix it</div>
+      </button>
+    </div>
+  </div>
+</div>

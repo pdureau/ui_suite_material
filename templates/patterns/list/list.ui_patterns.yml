@@ -1,13 +1,10 @@
 list:
   label: List
-  description: Lists are continuous, vertical indexes of text or images. https://material.io/develop/web/components/lists
+  description: Lists are continuous, vertical indexes of text or images. https://material.io/components/lists
   variants:
     default:
       label: Single-line
       description: Single-line list items contain a maximum of one line of text.
-    two_line:
-      label: Two-line
-      description: Two-line list items contain a maximum of two lines of text.
     dense:
       label: Dense
       description: Styles the density of the list, making it appear more compact.
@@ -15,7 +12,13 @@ list:
     items:
       type: array
       label: Items
+      description: "A flat list of items, where each item can be a string, or a dictionary with: attributes: HTML attributes for the item. title: The item title. url: An optional link url."
       preview:
-        - Single-line item 1
-        - Single-line item 2
-        - Single-line item 3
+        - title: Item 1
+        - title: Item 2
+          url: "#"
+        - "Item 3"
+  libraries:
+    - list_init:
+        js:
+          list_init.js: {}

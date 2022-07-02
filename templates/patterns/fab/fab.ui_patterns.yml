@@ -8,17 +8,14 @@ fab:
       label: Mini
     touch:
       label: Touch
+    mini__touch:
+      label: Mini & Touch
     extended:
       label: Extended
       description: Modifies the FAB to wider size which includes a text label.
-    exited:
-      label: Exited
-      description: Animates the FAB out of view.
-    mini__touch:
-      label: Mini & Touch
   fields:
-    text:
+    label:
       type: text
       label: Text
-      description: The chip text
-      preview: Add to calendar
+      description: The FAB label (for extended variant only).
+      preview: Create

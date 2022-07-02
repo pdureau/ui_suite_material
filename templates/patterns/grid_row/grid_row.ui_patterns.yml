@@ -1,0 +1,87 @@
+grid_row:
+  label: "Grid Row"
+  description: "Material design’s responsive UI is based on a column-variate grid layout. It has 12 columns on desktop, 8 columns on tablet and 4 columns on phone. https://material.io/develop/web/supporting/layout-grid"
+  settings:
+    span:
+      label: "Number of columns the cells span"
+      type: "select"
+      preview: "4"
+      options:
+        span-1: "1"
+        span-2: "2"
+        span-3: "3"
+        span-4: "4"
+        span-5: "5"
+        span-6: "6"
+        span-7: "7"
+        span-8: "8"
+        span-9: "9"
+        span-10: "10"
+        span-11: "11"
+        span-12: "12"
+    span_phone:
+      label: "Number of columns the cells span for phones"
+      type: "select"
+      preview: ""
+      options:
+        span-1: "1"
+        span-2: "2"
+        span-3: "3"
+        span-4: "4"
+    span_tablet:
+      label: "Number of columns the cells span for tablets"
+      type: "select"
+      preview: ""
+      options:
+        span-1: "1"
+        span-2: "2"
+        span-3: "3"
+        span-4: "4"
+        span-5: "5"
+        span-6: "6"
+        span-7: "7"
+        span-8: "8"
+    span_desktop:
+      label: "Number of columns the cells span for desktops"
+      type: "select"
+      preview: "6"
+      options:
+        span-1: "1"
+        span-2: "2"
+        span-3: "3"
+        span-4: "4"
+        span-5: "5"
+        span-6: "6"
+        span-7: "7"
+        span-8: "8"
+        span-9: "9"
+        span-10: "10"
+        span-11: "11"
+        span-12: "12"
+    align:
+      label: "Alignment"
+      description: Items are defined to stretch, by default, taking up the height of their corresponding row. You can switch to a different behavior by using one of the alignment classes (top, middle or bottom).
+      type: "select"
+      options:
+        "": "Stretch (default)"
+        top: "Top"
+        middle: "Middle"
+        bottom: "Bottom"
+  fields:
+    content:
+      type: "render"
+      label: "Content"
+      description: "The content of each cell"
+      preview:
+        - type: "pattern_preview"
+          id: "card"
+          variant: "default"
+        - type: "pattern_preview"
+          id: "card"
+          variant: "default"
+        - type: "pattern_preview"
+          id: "card"
+          variant: "default"
+        - type: "pattern_preview"
+          id: "card"
+          variant: "default"

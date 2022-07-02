@@ -1,19 +1,29 @@
 menu:
   label: Menu
-  description: A menu displays a list of choices on a temporary surface. They appear when users interact with a button, action, or other control. https://material.io/develop/web/components/menus
+  description: A menu displays a list of choices on a temporary surface. They appear when users interact with a button, action, or other control. https://material.io/components/menus/
   fields:
     items:
       type: render
       label: Menu items
+      description: A renderable list component.
       preview:
-        - title: Home
-          url: "#"
-          attributes: {}
-        - title: Library
-          url: "#"
-          below:
-            - title: Sub 1
-              url: "#"
-            - title: Sub 2
-              url: "#"
-        - title: Data
+        - type: pattern
+          id: list
+          fields:
+            items:
+              - title: Home
+                url: "#"
+                attributes: {}
+              - title: Library
+                url: "#"
+                below:
+                  - title: Sub 1
+                    url: "#"
+                  - title: Sub 2
+                    url: "#"
+              - title: Data
+                url: "#"
+  libraries:
+    - menu_init:
+        js:
+          menu_init.js: {}

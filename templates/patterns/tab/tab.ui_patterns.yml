@@ -1,0 +1,14 @@
+tab:
+  label: Tab
+  description: XXX https://material.io/components/tabs
+  variants:
+    default:
+      label: Default
+    active:
+      label: Active
+  fields:
+    text:
+      type: text
+      label: Text
+      description: The tab text
+      preview: Favourites
