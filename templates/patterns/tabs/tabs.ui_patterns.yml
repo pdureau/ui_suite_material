@@ -7,10 +7,16 @@ tabs:
       label: Tabs
       description: Renderable tabs patterns.
       preview:
-        - type: pattern_preview
+        - type: pattern
           id: tab
           variant: active
-        - type: pattern_preview
+          text: Search
+          icon: search
+        - type: pattern
           id: tab
-        - type: pattern_preview
+          text: Favorite
+          icon: favorite
+        - type: pattern
           id: tab
+          text: Settings
+          icon: settings

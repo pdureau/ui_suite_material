@@ -1,6 +1,6 @@
 tab:
-  label: Tab
-  description: XXX https://material.io/components/tabs
+  label: (Tab)
+  description: Use it only with Tabs component. https://material.io/components/tabs/web
   variants:
     default:
       label: Default
@@ -12,3 +12,14 @@ tab:
       label: Text
       description: The tab text
       preview: Favourites
+  settings:
+    icon:
+      type: textfield
+      label: Icon
+      description: Icon list in https://fonts.google.com/icons?selected=Material+Icons
+      preview: search
+  libraries:
+    - ui_suite_material/material_icons
+    - tab_init:
+        js:
+          tab_init.js: {}

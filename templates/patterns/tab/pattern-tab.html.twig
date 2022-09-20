@@ -1,13 +1,12 @@
 {% if variant != '' and variant|lower != 'default' %}
-  {% set variants = variant|split('__') %}
-  {% for variant in variants %}
-    {% set attributes = attributes.addClass('mdc-tab--' ~ variant|lower|replace({'_': '-'})) %}
-  {% endfor %}
+  {% set attributes = attributes.addClass('mdc-tab--' ~ variant|lower|replace({'_': '-'})) %}
 {% endif %}
 
 <button{{ attributes.addClass('mdc-tab').setAttribute('aria-selected', 'true').setAttribute('role', 'tab').setAttribute('tabindex', '0') }}>
   <span class="mdc-tab__content">
-    <span class="mdc-tab__icon material-icons" aria-hidden="true">favorite</span>
+    {% if icon %}
+    <span class="mdc-tab__icon material-icons" aria-hidden="true">{{ icon }}</span>
+    {% endif %}
     <span class="mdc-tab__text-label">{{ text }}</span>
   </span>
   {% if variant == 'active' %}

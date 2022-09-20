@@ -1,16 +1,29 @@
 {% if variant != '' and variant|lower != 'default' %}
-  {% set variants = variant|split('__') %}
-  {% for variant in variants %}
-    {% set attributes = attributes.addClass('mdc-button--' ~ variant|lower|replace({'_': '-'})) %}
-  {% endfor %}
+  {% set attributes = attributes.addClass('mdc-button--' ~ variant|lower|replace({'_': '-'})) %}
 {% endif %}
+
+{% set icon_position = icon_position|default('left') %}
 
 {% if url or attributes.href %}
   {% set url = url ?: attributes.href %}
-  <a{{ attributes.addClass('mdc-button').setAttribute('href', url) }}>{{ label }}</a>
+  <a{{ attributes.addClass('mdc-button').setAttribute('href', url) }}>
+    {% if icon and icon_position == "left" %}
+    <i class="material-icons mdc-button__icon" aria-hidden="true">{{ icon }}</i>
+    {% endif %}
+    <span class="mdc-button__label">{{ label }}</span>
+    {% if icon and icon_position == "right" %}
+    <i class="material-icons mdc-button__icon" aria-hidden="true">{{ icon }}</i>
+    {% endif %}
+  </a>
 {% else %}
   <div{{ attributes.addClass('mdc-button') }}>
     <div class="mdc-button__ripple"></div>
+    {% if icon and (not icon_position == "right") %}
+    <i class="material-icons mdc-button__icon" aria-hidden="true">{{ icon }}</i>
+    {% endif %}
     <span class="mdc-button__label">{{ label }}</span>
+    {% if icon and (icon_position == "right") %}
+    <i class="material-icons mdc-button__icon" aria-hidden="true">{{ icon }}</i>
+    {% endif %}
   </div>
 {% endif %}

@@ -18,4 +18,15 @@ fab:
       type: text
       label: Text
       description: The FAB label (for extended variant only).
-      preview: Create
+      preview: Search
+  settings:
+    icon:
+      type: textfield
+      label: Icon
+      description: Icon list in https://fonts.google.com/icons?selected=Material+Icons
+      preview: search
+  libraries:
+    - ui_suite_material/material_icons
+    - fab_init:
+        js:
+          fab_init.js: {}
