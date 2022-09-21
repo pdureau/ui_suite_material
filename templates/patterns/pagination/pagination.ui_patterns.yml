@@ -1,0 +1,30 @@
+pagination:
+  label: Pagination
+  description: "Pagination controls provide swift access to all pages while indicating that more pages exist. https://material.io/components/data-tables/"
+  fields:
+    first:
+      type: array
+      label: First
+      description: "Item for the first page; not present on the first page of results."
+      preview: null
+    previous:
+      type: array
+      label: Previous
+      description: "Item for the previous page; not present on the first page of results."
+      preview: null
+    next:
+      type: array
+      label: Next
+      description: "Item for the next page; not present on the last page of results."
+      preview:
+        href: "#"
+        text: Page 5
+    last:
+      type: array
+      label: Last
+      description: "Item for the last page; not present on the last page of results."
+      preview:
+        href: "#"
+        text: Page 10
+  libraries:
+    - ui_suite_material/material_icons

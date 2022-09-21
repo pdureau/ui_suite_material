@@ -1,0 +1,50 @@
+<div{{ attributes.addClass('mdc-data-table__pagination') }}>
+  <div class="mdc-data-table__pagination-trailing">
+    <div class="mdc-data-table__pagination-navigation">
+      <div class="mdc-data-table__pagination-total">
+        1‑10 of 100
+      </div>
+
+      {% if first %}
+      <a class="mdc-icon-button material-icons mdc-data-table__pagination-button" data-first-page="true" href="{{ first.href }}" title="{{ first.text }}">
+        <div class="mdc-button__icon">first_page</div>
+      </a>
+      {% else %}
+      <button class="mdc-icon-button material-icons mdc-data-table__pagination-button" data-first-page="true" disabled>
+        <div class="mdc-button__icon">first_page</div>
+      </button>
+      {% endif %}
+
+      {% if previous %}
+      <a class="mdc-icon-button material-icons mdc-data-table__pagination-button" data-prev-page="true" href="{{ previous.href }}" title="{{ previous.text }}">
+        <div class="mdc-button__icon">chevron_left</div>
+      </a>
+      {% else %}
+      <button class="mdc-icon-button material-icons mdc-data-table__pagination-button" data-first-page="true" disabled>
+        <div class="mdc-button__icon">chevron_left</div>
+      </button>
+      {% endif %} 
+
+      {% if next %}
+      <a class="mdc-icon-button material-icons mdc-data-table__pagination-button" data-next-page="true" href="{{ next.href }}" title="{{ next.text }}">
+        <div class="mdc-button__icon">chevron_right</div>
+      </a>
+      {% else %}
+      <button class="mdc-icon-button material-icons mdc-data-table__pagination-button" data-next-page="true" disabled>
+        <div class="mdc-button__icon">chevron_right</div>
+      </button>
+      {% endif %}   
+      
+      {% if last %}
+      <a class="mdc-icon-button material-icons mdc-data-table__pagination-button" data-last-page="true" href="{{ last.href }}" title="{{ last.text }}">
+        <div class="mdc-button__icon">last_page</div>
+      </a>
+     {% else %}
+      <button class="mdc-icon-button material-icons mdc-data-table__pagination-button" data-last-page="true" disabled>
+        <div class="mdc-button__icon">last_page</div>
+      </button>
+      {% endif %}  
+
+    </div>
+  </div>
+</div>
