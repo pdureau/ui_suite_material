@@ -1,6 +1,8 @@
-document.querySelectorAll('.mdc-banner').forEach(
-  function(element) {
-    const banner = new window.mdc.banner.MDCBanner(element);
-    banner.open();
+(function () {
+  "use strict";
+  const banners = document.querySelectorAll(".mdc-banner");
+  console.log(banners);
+  for (const banner of banners) {
+    mdc.banner.MDCBanner.attachTo(banner);
   }
-)
+})();

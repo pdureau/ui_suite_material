@@ -1,0 +1,22 @@
+{% if variant != '' and variant|lower != 'default' %}
+  {% set attributes = attributes.addClass('mdc-image-list--' ~ variant|lower|replace({'_': '-'})) %}
+{% endif %}
+
+<ul{{ attributes.addClass('mdc-image-list') }}>
+  {% for item in items %}
+  <li class="mdc-image-list__item">
+    {% if variant is same as ("masonry") %}
+    <div class="mdc-image-list__image-aspect-container">
+    {% endif %}
+      {{ item.image }}
+    {% if variant is same as ("masonry") %}
+    </div>
+    {% endif %}
+    {% if item.label %}
+    <div class="mdc-image-list__supporting">
+      <span class="mdc-image-list__label">{{ item.label }}</span>
+    </div>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>

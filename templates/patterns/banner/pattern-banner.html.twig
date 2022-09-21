@@ -8,15 +8,19 @@
 <div{{ attributes.addClass('mdc-banner').setAttribute('role', 'banner') }}>
   <div class="mdc-banner__content" role="alertdialog" aria-live="assertive">
     <div class="mdc-banner__graphic-text-wrapper">
+      {% if graphic %}
+      <div class="mdc-banner__graphic" role="img" alt=""><i class="material-icons mdc-banner__icon">{{ graphic }}</i></div>
+      {% endif %}
+      {% if text %}
       <div class="mdc-banner__text">
-        There was a problem processing a transaction on your credit card.
+      {{ text }}
       </div>
+      {% endif %}
     </div>
+      {% if actions %}
     <div class="mdc-banner__actions">
-      <button type="button" class="mdc-button mdc-banner__primary-action">
-        <div class="mdc-button__ripple"></div>
-        <div class="mdc-button__label">Fix it</div>
-      </button>
+      {{ actions }}
     </div>
+    {% endif %}
   </div>
 </div>

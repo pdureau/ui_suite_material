@@ -1,0 +1,32 @@
+image_list:
+  label: Image list
+  description: Image lists display a collection of images in an organized grid. https://material.io/components/image-lists/web
+  variants:
+    default:
+      label: Default
+    masonry:
+      label: Masonry
+      description: Presents images vertically arranged into several columns, using CSS Columns. 
+  fields:
+    items:
+      type: array
+      label: Items
+      description: "A flat list of items, where each item is made of: - image: a renderable image. - label: an optional item label"
+      preview:
+        - image: 
+            type: html_tag
+            tag: img
+            attributes:
+              src: assets/image-1.png
+        - label: Image 2
+          image: 
+            type: html_tag
+            tag: img
+            attributes:
+              src: assets/image-2.jpg
+        - label: Image 3
+          image: 
+            type: html_tag
+            tag: img
+            attributes:
+              src: assets/image-3.jpg
