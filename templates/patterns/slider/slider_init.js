@@ -1,5 +1,7 @@
-document.querySelectorAll('.mdc-slider').forEach(
-  function(element) {
-    const banner = new window.mdc.slider.MDCSlider(element);
+(function () {
+  "use strict";
+  const sliders = document.querySelectorAll(".mdc-slider");
+  for (const slider of sliders) {
+    mdc.slider.MDCSlider.attachTo(slider);
   }
-)
+})();

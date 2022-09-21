@@ -1,7 +1,7 @@
 (function () {
   "use strict";
-  const fabs = document.querySelector(".mdc-fab");
+  const fabs = document.querySelectorAll(".mdc-fab");
   for (const fab of fabs) {
-    mdc.fab.MDCFab.attachTo(fab);
+    mdc.ripple.MDCRipple.attachTo(fab);
   }
 })();

@@ -1,6 +1,8 @@
-document.querySelectorAll('.mdc-menu').forEach(
-  function(element) {
-    const menu = new window.mdc.menu.MDCMenu(element);
-    menu.open = true;
+(function () {
+  "use strict";
+  const menus = document.querySelectorAll(".mdc-menu");
+  for (const menu of menus) {
+    mdc.menu.MDCMenu.attachTo(menu);
+    // menu.open = true;
   }
-)
+})();

@@ -1,6 +1,7 @@
-document.querySelectorAll('.mdc-list').forEach(
-  function(element) {
-    const list = new window.mdc.list.MDCList(element);
-    const ripple = new window.mdc.ripple.MDCRipple(list);
+(function () {
+  "use strict";
+  const lists = document.querySelectorAll(".mdc-list");
+  for (const list of lists) {
+    mdc.list.MDCList.attachTo(list);
   }
-)
+})();
