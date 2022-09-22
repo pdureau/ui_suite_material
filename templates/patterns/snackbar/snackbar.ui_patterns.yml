@@ -4,15 +4,38 @@ snackbar:
   variants:
     default:
       label: Default
-    open:
-      label: Open
-      descrition: Indicates that the snackbar is open and visible.
     stacked:
       label: Stacked
       description: Positions the action button/icon below the label instead of alongside it.
+    leading:
+      label: Leading
+      description: Displayed on the leading edge of the screen.
   fields:
-    text:
+    label:
       type: text
-      label: Text
-      description: The chip text
-      preview: Add to calendar
+      label: Label
+      description: The snackbar label
+      preview: Try again :)
+    button:
+      type: render
+      label: Button
+      description: Renderable button component.
+      preview:
+        - type: pattern
+          id: button
+          label: Retry
+          url: "#"
+  settings:
+    role:
+      type: select
+      label: Role
+      description: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles
+      options:
+        log: Log
+        status: Status
+        alert: Alert
+      preview: log
+  libraries:
+    - snackbar_init:
+        js:
+          snackbar_init.js: {}
