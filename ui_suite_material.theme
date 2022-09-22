@@ -124,3 +124,22 @@ function ui_suite_material_preprocess_pattern_banner(array &$variables) {
     }
   }
 }
+
+
+/**
+ * Implements hook_preprocess_HOOK() for top_app_bar patterns.
+ *
+ * See also: https://material.io/components/app-bars-top.
+ */
+function ui_suite_material_preprocess_pattern_top_app_bar(array &$variables) {
+  if (array_key_exists('navigation', $variables) && is_array($variables['navigation'])) {
+    foreach ($variables['navigation'] as &$item) {
+      $item['#attributes']['class'][] = 'mdc-top-app-bar__navigation-icon';
+    }
+  }
+  if (array_key_exists('buttons', $variables) && is_array($variables['buttons'])) {
+    foreach ($variables['buttons'] as &$item) {
+      $item['#attributes']['class'][] = 'mdc-top-app-bar__action-item';
+    }
+  }
+}

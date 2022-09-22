@@ -1,25 +1,54 @@
 top_app_bar:
   label: Top app bar
-  description: The top app bar provides content and actions related to the current screen. It’s used for branding, screen titles, navigation, and actions. https://material.io/develop/web/components/top-app-bar
+  description: The top app bar provides content and actions related to the current screen. It’s used for branding, screen titles, navigation, and actions. https://material.io/components/app-bars-top
   variants:
     default:
       label: Default
     short:
       label: Short
+      description: Short top app bars are top app bars that can collapse to the navigation icon side when scrolled. Short top app bars should be used with no more than 1 action item.
     dense:
       label: Dense
+      description: The dense top app bar is shorter.
     prominent:
       label: Prominent
+      description: The prominent top app bar is taller.
     # TODO: Fixed as a setting
+    # Fixed top app bars stay at the top of the page and elevate above the content when scrolled.
     # TODO: Ajust as a setting
   fields:
-    label:
+    navigation:
+      type: render
+      label: Navigation button
+      description: Renderable icon button.
+      preview:
+        - type: pattern
+          id: icon_button
+          label: Open navigation menu
+          icon: menu
+    title:
       type: text
-      label: Label
-      description: The button label
-      preview: Submit
-    url:
-      type: text
-      label: URL
-      description: The button URL. Optional.
-      preview: http://example.com
+      label: Title
+      description: The bar title
+      preview: Page title
+    buttons:
+      type: render
+      label: Buttons
+      description: Renderable icon buttons.
+      preview:
+        - type: pattern
+          id: icon_button
+          label: Favorite
+          icon: favorite
+        - type: pattern
+          id: icon_button
+          label: Search
+          icon: search
+        - type: pattern
+          id: icon_button
+          label: Options
+          icon: more_vert
+  libraries:
+    - top_app_bar_init:
+        js:
+          top_app_bar_init.js: {}

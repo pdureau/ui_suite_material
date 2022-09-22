@@ -1,0 +1,8 @@
+{% set attributes = attributes.addClass('mdc-icon-button').addClass('material-icons').setAttribute('aria-label', label) %}
+
+{% if url or attributes.href %}
+  {% set url = url ?: attributes.href %}
+  <a{{ attributes.setAttribute('href', url) }}>{{ icon }}</a>
+{% else %}
+  <button{{ attributes }}>{{ icon }}</button>
+{% endif %}

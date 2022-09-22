@@ -1,0 +1,23 @@
+icon_button:
+  label: (Icon Button)
+  description: To use inside Top app bar. https://material.io/components/app-bars-top/web
+  fields:
+    label:
+      type: text
+      label: Label
+      description: The button label
+      preview: Submit
+    url:
+      type: text
+      label: URL
+      description: The button URL. Optional.
+      preview: http://example.com
+  settings:
+    icon:
+      type: textfield
+      label: Icon
+      description: Icon list in https://fonts.google.com/icons?selected=Material+Icons
+      preview: search
+  libraries:
+    - ui_suite_material/material_icons
+    - ui_patterns/top_app_bar.top_app_bar_init
