@@ -1,0 +1,18 @@
+breadcrumb:
+  label: Breadcrumb
+  description: Indicate the current page’s location within a navigational hierarchy that automatically adds separators via CSS. Doesn't exist in https://material.io/
+  fields:
+    items:
+      type: render
+      label: Items
+      preview:
+        - text: Home
+          url: "#"
+        - text: Library
+          url: "#"
+        - text: Data
+  libraries:
+    - breadcrumb:
+        css:
+          component:
+            "breadcrumb.css": {}

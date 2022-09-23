@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Template for a grid layout.
+ */
+#}
+
+{%
+  set classes = [
+    'layout',
+    'layout--' ~ layout.id|clean_class,
+    'row',
+  ]
+%}
+
+{% set attributes = attributes.addClass(classes) %}
+
+<div{{ attributes.addClass('mdc-layout-grid"') }}>
+  <div class="mdc-layout-grid__inner">
+  {% for region in layout.getRegionNames %}
+    {% if content[region] %}
+    <div{{ region_attributes[region].addClass('layout__region', 'layout__region--' ~ region|clean_class, 'mdc-layout-grid__cell') }}>
+      {{ content[region] }}
+    </div>
+    {% endif %}
+  {% endfor %}
+  </div>
+</div>
+

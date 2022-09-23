@@ -1,0 +1,91 @@
+layout_option_definitions:
+  # Sections options.
+  span:
+    title: "Cells span"
+    description: "Number of columns the cells span"
+    default: "4"
+    plugin: "layout_options_class_select"
+    multi: false
+    layout: false
+    regions: true
+    options:
+      mdc-layout-grid__cell--span-1: "1"
+      mdc-layout-grid__cell--span-2: "2"
+      mdc-layout-grid__cell--span-3: "3"
+      mdc-layout-grid__cell--span-4: "4"
+      mdc-layout-grid__cell--span-5: "5"
+      mdc-layout-grid__cell--span-6: "6"
+      mdc-layout-grid__cell--span-7: "7"
+      mdc-layout-grid__cell--span-8: "8"
+      mdc-layout-grid__cell--span-9: "9"
+      mdc-layout-grid__cell--span-10: "10"
+      mdc-layout-grid__cell--span-11: "11"
+      mdc-layout-grid__cell--span-12: "12"
+  span_phone:
+    title: "Cells span for phones"
+    description: "Number of columns the cells span for phones"
+    default: ""
+    plugin: "layout_options_class_select"
+    multi: false
+    layout: false
+    regions: true
+    options:
+      mdc-layout-grid__cell--span-1--phone: "1"
+      mdc-layout-grid__cell--span-2--phone: "2"
+      mdc-layout-grid__cell--span-3--phone: "3"
+      mdc-layout-grid__cell--span-4--phone: "4"
+  span_tablet:
+    title: "Cells span for tablets"
+    description: "Number of columns the cells span for tablets"
+    default: ""
+    plugin: "layout_options_class_select"
+    multi: false
+    layout: false
+    regions: false
+    options:
+      mdc-layout-grid__cell--span-1--tablet: "1"
+      mdc-layout-grid__cell--span-2--tablet: "2"
+      mdc-layout-grid__cell--span-3--tablet: "3"
+      mdc-layout-grid__cell--span-4--tablet: "4"
+      mdc-layout-grid__cell--span-5--tablet: "5"
+      mdc-layout-grid__cell--span-6--tablet: "6"
+      mdc-layout-grid__cell--span-7--tablet: "7"
+      mdc-layout-grid__cell--span-8--tablet: "8"
+  span_desktop:
+    title: "Cells span for desktops"
+    description: "Number of columns the cells span for desktops"
+    default: ""
+    plugin: "layout_options_class_select"
+    multi: false
+    layout: false
+    regions: true
+    options:
+      mdc-layout-grid__cell--span-1--desktop: "1"
+      mdc-layout-grid__cell--span-2--desktop: "2"
+      mdc-layout-grid__cell--span-3--desktop: "3"
+      mdc-layout-grid__cell--span-4--desktop: "4"
+      mdc-layout-grid__cell--span-5--desktop: "5"
+      mdc-layout-grid__cell--span-6--desktop: "6"
+      mdc-layout-grid__cell--span-7--desktop: "7"
+      mdc-layout-grid__cell--span-8--desktop: "8"
+  align:
+    title: "Alignment"
+    description: "Items are defined to stretch, by default, taking up the height of their corresponding row. You can switch to a different behavior by using one of the alignment classes (top, middle or bottom)"
+    default: ""
+    plugin: "layout_options_class_select"
+    multi: false
+    layout: false
+    regions: true
+    options:
+      "": "Stretch (default)"
+      top: "Top"
+      middle: "Middle"
+      bottom: "Bottom"
+
+layout_options:
+  global:
+    span: {}
+    span_phone: {}
+    span_tablet: {}
+    span_desktop: {}
+    align: {}
