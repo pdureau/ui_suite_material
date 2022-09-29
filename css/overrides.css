@@ -1,0 +1,14 @@
+.mdc-data-table__cell,
+.mdc-data-table__header-cell {
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.mdc-top-app-bar {
+  position: static;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}

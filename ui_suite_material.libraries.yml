@@ -25,3 +25,8 @@ preview:
   css:
     theme:
       "css/preview.css": {}
+
+overrides:
+  css:
+    theme:
+      "css/overrides.css": {}

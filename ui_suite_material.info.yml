@@ -8,3 +8,12 @@ base theme: false
 libraries:
   - ui_suite_material/material
   - ui_suite_material/preview
+  - ui_suite_material/overrides
+regions:
+  header_navigation: "Header navigation"
+  header_title: "Header title"
+  header_buttons: "Header buttons"
+  content: "Content"
+  sidebar_first: "Sidebar first"
+  sidebar_second: "Sidebar second"
+  footer: "Footer"

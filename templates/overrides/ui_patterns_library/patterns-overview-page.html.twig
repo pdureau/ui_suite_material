@@ -6,38 +6,32 @@
 #}
 
 {% if patterns is not empty %}
-<div class="mdc-layout-grid">
 <div class="mdc-layout-grid__inner">
 
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-  <h2 class="hidden">{{ "Available patterns"|t }}</h2>
+  <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-phone mdc-layout-grid__cell--span-4">
+    <h2 class="hidden">{{ "Available patterns"|t }}</h2>
+    {# List of available patterns with anchor links. #}
+    <ul class="mdc-list ">
+      {% for pattern_name, pattern in patterns %}
+        <li class="mdc-list-item">
+          <a href="#{{ pattern_name }}">{{ pattern.label }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 
-  {# List of available patterns with anchor links. #}
-  <ul class="mdc-list ">
+  <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-phone mdc-layout-grid__cell--span-8">
     {% for pattern_name, pattern in patterns %}
-      <li class="mdc-list-item">
-        <a href="#{{ pattern_name }}">{{ pattern.label }}</a>
-      </li>
+      <div class="pattern-preview pattern-preview__{{ pattern.definition.id }}">
+        <h3 class="pattern-preview__label mdc-typography--headline3" id="{{ pattern.definition.id }}"><a href="{{ url('ui_patterns.patterns.single', {'name': pattern.definition.id}) }}">{{ pattern.label }}</a></h3>
+        {{ pattern.meta }}
+        {{ pattern.rendered }}
+      </div>
+      <hr class="my-5">
     {% endfor %}
-  </ul>
+  </div>
 
 </div>
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-10">
-
-  {% for pattern_name, pattern in patterns %}
-
-    <div class="pattern-preview pattern-preview__{{ pattern.definition.id }}">
-      <h3 class="pattern-preview__label mdc-typography--headline3" id="{{ pattern.definition.id }}"><a href="{{ url('ui_patterns.patterns.single', {'name': pattern.definition.id}) }}">{{ pattern.label }}</a></h3>
-      {{ pattern.meta }}
-      {{ pattern.rendered }}
-    </div>
-
-    <hr class="my-5">
-  {% endfor %}
-
-</div>
-</div>
-
 {% endif %}
 
 
