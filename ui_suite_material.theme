@@ -93,6 +93,11 @@ function ui_suite_material_preprocess_pattern_image_list(array &$variables) {
 function ui_suite_material_preprocess_pattern_card(array &$variables) {
   if ($variables['context']->getType() == 'preview') {
     $variables['attributes']['style'] = "max-width: 600px";
+    if (array_key_exists('media', $variables) && is_array($variables['media'])) {
+      foreach ($variables['media'] as &$media) {
+         $media = _ui_suite_material_add_media_path($media);
+      }
+    }
   }
     
   if (array_key_exists('action_buttons', $variables) && is_array($variables['action_buttons'])) {
@@ -125,7 +130,6 @@ function ui_suite_material_preprocess_pattern_banner(array &$variables) {
   }
 }
 
-
 /**
  * Implements hook_preprocess_HOOK() for top_app_bar patterns.
  *
@@ -140,6 +144,19 @@ function ui_suite_material_preprocess_pattern_top_app_bar(array &$variables) {
   if (array_key_exists('buttons', $variables) && is_array($variables['buttons'])) {
     foreach ($variables['buttons'] as &$item) {
       $item['#attributes']['class'][] = 'mdc-top-app-bar__action-item';
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for snackbar patterns.
+ *
+ * See also: https://material.io/components/snackbars.
+ */
+function ui_suite_material_preprocess_pattern_snackbar(array &$variables) {
+  if (array_key_exists('button', $variables) && is_array($variables['button'])) {
+    foreach ($variables['button'] as &$item) {
+      $item['#attributes']['class'][] = 'mdc-snackbar__action';
     }
   }
 }

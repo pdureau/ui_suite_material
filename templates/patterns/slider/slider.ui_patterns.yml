@@ -4,10 +4,17 @@ slider:
   variants:
     default:
       label: Default (Continuous)
+    range:
+      label: Continuous range
     discrete:
       label: Discrete
-    display-markers:
-      label: "Display tracker markers (discrete slider only)"
+      description: Discrete sliders display a numeric value label upon pressing the thumb, which allows a user to select an exact value.
+    discrete__tick_marks:
+      label: Discrete with tick marks
+    range__discrete:
+      label: "Discrete range"
+    range__discrete__tick_marks:
+      label: "Discrete range"
     disabled:
       label: Disabled
   fields:
@@ -15,6 +22,10 @@ slider:
       type: integer
       label: Value
       preview: 50
+    value_end:
+      type: integer
+      label: End value (for range only)
+      preview: 70
     min:
       type: integer
       label: Minimum

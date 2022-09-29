@@ -1,6 +1,6 @@
 icon_button:
-  label: (Icon Button)
-  description: To use inside Top app bar. https://material.io/components/app-bars-top/web
+  label: Icon Button
+  description: To use inside "Top app bar" or "Card" components.
   fields:
     label:
       type: text

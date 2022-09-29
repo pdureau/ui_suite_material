@@ -30,6 +30,7 @@ button:
     icon_position:
       type: select
       label: Icon position
+      required: true
       options:
         left: Left (Default)
         right: Right

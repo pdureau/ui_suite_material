@@ -11,15 +11,47 @@ card:
       type: select
       label: Media scale
       options:
-        "": Default
         "square": Square
         "16-9": "16-9"
+      required: true
+      preview: 16-9
   fields:
-    title:
-      type: text
-      label: Title
-      description: The card title
-      preview: Title
+    header:
+      type: render
+      label: Card header
+      description: Before the media
+      preview:
+        - type: html_tag
+          tag: p
+          value: Lorem ipsum.
+    media:
+      type: render
+      label: Media
+      description: "The first image URL will be extracted and put in a custom background-image with background-size: cover"
+      preview:
+        - type: html_tag
+          tag: img
+          attributes:
+            src: assets/card.png
+    media_content:
+      type: render
+      label: Media content
+      description: An absolutely-positioned box the same size as the media area, for displaying a title or icon on top of the background-image.
+      preview:
+        - type: "pattern"
+          id: "icon_button"
+          fields:
+            label: "More options"
+          settings:
+            icon: search
+    body:
+      type: render
+      label: Card body
+      description: After the media
+      preview:
+        - type: html_tag
+          tag: p
+          value: Lorem ipsum.
     action_buttons:
       type: render
       label: Action buttons
@@ -39,10 +71,14 @@ card:
       description: The card action icons
       preview:
         - type: "pattern"
-          id: "button"
+          id: "icon_button"
           fields:
             label: "Share"
+          settings:
+            icon: share
         - type: "pattern"
-          id: "button"
+          id: "icon_button"
           fields:
             label: "More options"
+          settings:
+            icon: search

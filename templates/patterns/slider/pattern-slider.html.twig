@@ -1,12 +1,21 @@
+{% set discrete = false %}
+{% set range = false %}
 {% if variant != '' and variant|lower != 'default' %}
   {% set variants = variant|split('__') %}
   {% for variant in variants %}
+    {% set discrete = (variant == "discrete")? true : discrete %}
+    {% set range = (variant == "range")? true : range %}
     {% set attributes = attributes.addClass('mdc-slider--' ~ variant|lower|replace({'_': '-'})) %}
   {% endfor %}
 {% endif %}
 
 <div{{ attributes.addClass('mdc-slider') }}>
+  {% if range and value_end %}
+   <input class="mdc-slider__input" type="range" min="{{ min }}" max="{{ max }}" value="{{ value }}" name="{{ name }}_start" aria-label="{{ label }}">
+    <input class="mdc-slider__input" type="range" min="{{ min }}" max="{{ max }}" value="{{ value_end }}" name="{{ name }}_end" aria-label="Continuous range slider demo">
+  {% else %}
   <input class="mdc-slider__input" type="range" min="{{ min }}" max="{{ max }}" value="{{ value }}" name="{{ name }}" aria-label="{{ label }}">
+  {% endif %}
   <div class="mdc-slider__track">
     <div class="mdc-slider__track--inactive"></div>
     <div class="mdc-slider__track--active">
@@ -14,6 +23,29 @@
     </div>
   </div>
   <div class="mdc-slider__thumb">
+    {% if discrete %}
+    <div class="mdc-slider__value-indicator-container" aria-hidden="true">
+      <div class="mdc-slider__value-indicator">
+        <span class="mdc-slider__value-indicator-text">
+          {{ value }}
+        </span>
+      </div>
+    </div>
+    {% endif %}
     <div class="mdc-slider__thumb-knob"></div>
   </div>
+  {% if range and value_end %}
+  <div class="mdc-slider__thumb">
+    {% if discrete %}
+    <div class="mdc-slider__value-indicator-container" aria-hidden="true">
+      <div class="mdc-slider__value-indicator">
+        <span class="mdc-slider__value-indicator-text">
+          {{ value_end }}
+        </span>
+      </div>
+    </div>
+    {% endif %}
+    <div class="mdc-slider__thumb-knob"></div>
+  </div>
+  {% endif %}
 </div>
