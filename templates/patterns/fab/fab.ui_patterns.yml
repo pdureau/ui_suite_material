@@ -26,7 +26,8 @@ fab:
       description: Icon list in https://fonts.google.com/icons?selected=Material+Icons
       preview: search
   libraries:
-    - ui_suite_material/material_icons
     - fab_init:
         js:
           fab_init.js: {}
+        dependencies:
+          - ui_suite_material/material_icons

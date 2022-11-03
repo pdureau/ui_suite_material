@@ -36,7 +36,8 @@ button:
         right: Right
       preview: left
   libraries:
-    - ui_suite_material/material_icons
     - button_init:
         js:
           button_init.js: {}
+        dependencies:
+          - ui_suite_material/material_icons

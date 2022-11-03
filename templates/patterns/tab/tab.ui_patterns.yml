@@ -19,7 +19,8 @@ tab:
       description: Icon list in https://fonts.google.com/icons?selected=Material+Icons
       preview: search
   libraries:
-    - ui_suite_material/material_icons
     - tab_init:
         js:
           tab_init.js: {}
+        dependencies:
+          - ui_suite_material/material_icons
