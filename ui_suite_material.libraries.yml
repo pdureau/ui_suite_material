@@ -4,12 +4,10 @@ material:
     name: MIT
     gpl-compatible: false
   js:
-    "https://unpkg.com/material-components-web/dist/material-components-web.min.js":
-      { minified: true }
+    "https://unpkg.com/material-components-web/dist/material-components-web.min.js": { minified: true }
   css:
     theme:
-      "https://unpkg.com/material-components-web/dist/material-components-web.min.css":
-        { minified: true }
+      "https://unpkg.com/material-components-web/dist/material-components-web.min.css": { minified: true }
 
 material_icons:
   remote: https://fonts.google.com/icons?selected=Material+Icons

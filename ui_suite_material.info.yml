@@ -1,10 +1,16 @@
 name: UI Suite Material
 type: theme
 description: "A site-builder friendly Material Design theme, using the UI Suite: UI Patterns, UI Styles, Layout Options & UI Examples modules."
-version: 1.x-dev
-core: 8.x
-core_version_requirement: ^8 || ^9
+version: 2.x-dev
+core_version_requirement: ^9 || ^10
 base theme: false
+dependencies:
+  - layout_options:layout_options
+  - ui_patterns:ui_patterns_library
+  - ui_patterns_settings:ui_patterns_settings
+  - ui_styles:ui_styles
+  - ui_examples:ui_examples
+  - ui_skins:ui_skins
 libraries:
   - ui_suite_material/material
   - ui_suite_material/preview
