@@ -4,10 +4,14 @@ material:
     name: MIT
     gpl-compatible: false
   js:
-    "https://unpkg.com/material-components-web/dist/material-components-web.min.js": { minified: true }
+    "https://unpkg.com/material-components-web/dist/material-components-web.min.js":
+      minified: true
+      type: external
   css:
     theme:
-      "https://unpkg.com/material-components-web/dist/material-components-web.min.css": { minified: true }
+      "https://unpkg.com/material-components-web/dist/material-components-web.min.css":
+        minified: true
+        type: external
 
 material_icons:
   remote: https://fonts.google.com/icons?selected=Material+Icons
@@ -16,8 +20,10 @@ material_icons:
     gpl-compatible: false
   css:
     theme:
-      "https://fonts.googleapis.com/icon?family=Material+Icons": {}
-      "https://fonts.googleapis.com/css?family=Roboto:300,400,500": {}
+      "https://fonts.googleapis.com/icon?family=Material+Icons":
+        type: external
+      "https://fonts.googleapis.com/css?family=Roboto:300,400,500":
+        type: external
 
 preview:
   css:

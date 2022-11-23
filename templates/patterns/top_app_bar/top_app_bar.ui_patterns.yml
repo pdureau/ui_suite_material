@@ -48,6 +48,9 @@ top_app_bar:
           id: icon_button
           label: Options
           icon: more_vert
+    additional:
+      type: render
+      label: Additional content
   libraries:
     - top_app_bar_init:
         js:

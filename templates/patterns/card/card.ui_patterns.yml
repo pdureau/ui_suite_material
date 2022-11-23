@@ -23,7 +23,7 @@ card:
       preview:
         - type: html_tag
           tag: p
-          value: Lorem ipsum.
+          value: Card header.
     media:
       type: render
       label: Media
@@ -51,7 +51,7 @@ card:
       preview:
         - type: html_tag
           tag: p
-          value: Lorem ipsum.
+          value: Card body.
     action_buttons:
       type: render
       label: Action buttons

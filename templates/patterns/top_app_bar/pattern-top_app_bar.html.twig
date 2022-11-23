@@ -8,7 +8,7 @@
 <header{{ attributes.addClass('mdc-top-app-bar') }}>
   <div class="mdc-top-app-bar__row">
     <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-     {{ navigation }}
+      {{ navigation }}
       {% if title %}
       <span class="mdc-top-app-bar__title">{{ title }}</span>
       {% endif %}
@@ -17,4 +17,5 @@
       {{ buttons }}
     </section>
   </div>
+  {{ additional }}
 </header>

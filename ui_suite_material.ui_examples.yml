@@ -1,0 +1,58 @@
+fortnightly:
+  label: Fortnightly
+  description: "Material example app Fortnightly, a minimal news app. https://glitch.com/~fortnightly"
+  render:
+    - "#type": pattern
+      "#id": top_app_bar
+      "#fields":
+        title: "The fortnightly"
+        buttons:
+          - "#type": pattern
+            "#id": icon_button
+            "#fields":
+              icon: search
+              url: "#"
+        additional:
+          - "#type": pattern
+            "#id": tabs
+            "#fields":
+              tabs:
+                - "#type": pattern
+                  "#id": tab
+                  "#variant": active
+                  "#fields":
+                    text: "#Headlines"
+                - "#type": pattern
+                  "#id": tab
+                  "#fields":
+                    text: "#Opinion"
+                - "#type": pattern
+                  "#id": tab
+                  "#fields":
+                    text: "#Health"
+                - "#type": pattern
+                  "#id": tab
+                  "#fields":
+                    text: "#Food"
+    - "#type": pattern
+      "#id": grid_row
+      "#fields":
+        content:
+          - "#type": pattern_preview
+            "#id": card
+            "#variant": outlined
+          - "#type": pattern_preview
+            "#id": card
+            "#variant": outlined
+          - "#type": pattern_preview
+            "#id": card
+            "#variant": outlined
+          - "#type": pattern_preview
+            "#id": card
+            "#variant": outlined
+          - "#type": pattern_preview
+            "#id": card
+            "#variant": outlined
+          - "#type": pattern_preview
+            "#id": card
+            "#variant": outlined

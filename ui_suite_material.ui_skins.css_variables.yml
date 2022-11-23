@@ -174,30 +174,30 @@ mdc_layout_grid_margin_desktop:
   label: "Margin (for desktop)"
   group: Grid
   type: textfield
-  default_value: 24px;
+  default_value: 24px
   scope: ":root"
 mdc_layout_grid_gutter_desktop:
   label: "Gutter (for desktop)"
   group: Grid
   type: textfield
-  default_value: 24px;
+  default_value: 24px
   scope: ":root"
 mdc_layout_grid_column_width_desktop:
   label: "Column width (for desktop)"
   group: Grid
   type: textfield
-  default_value: 72px;
+  default_value: 72px
 mdc_layout_grid_margin_tablet:
   label: "Margin (for tablet)"
   group: Grid
   type: textfield
-  default_value: 16px;
+  default_value: 16px
   scope: ":root"
 mdc_layout_grid_gutter_tablet:
   label: "Gutter (for tablet)"
   group: Grid
   type: textfield
-  default_value: 16px;
+  default_value: 16px
   scope: ":root"
 mdc_layout_grid_column_width_tablet:
   label: "Column width (for tablet)"
