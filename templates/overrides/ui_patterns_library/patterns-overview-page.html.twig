@@ -12,16 +12,24 @@
     <h2 class="hidden">{{ "Available patterns"|t }}</h2>
     {# List of available patterns with anchor links. #}
     <ul class="mdc-list ">
-      {% for pattern_name, pattern in patterns %}
-        <li class="mdc-list-item">
-          <a href="#{{ pattern_name }}">{{ pattern.label }}</a>
-        </li>
+      {% for group_name, group_patterns in patterns %}
+        {% if patterns|length > 1 %}
+          <h3>{{ group_name }}</h3>
+        {% endif %}
+        <ul>
+          {% for pattern_name, pattern in group_patterns %}
+           <li class="mdc-list-item">
+              <a href="#{{ pattern_name }}">{{ pattern.label }}</a>
+            </li>
+          {% endfor %}
+        </ul>
       {% endfor %}
     </ul>
   </div>
 
   <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-phone mdc-layout-grid__cell--span-8">
-    {% for pattern_name, pattern in patterns %}
+    {% for group_patterns in patterns %}
+      {% for pattern_name, pattern in group_patterns %}
       <div class="pattern-preview pattern-preview__{{ pattern.definition.id }}">
         <h3 class="pattern-preview__label mdc-typography--headline3" id="{{ pattern.definition.id }}"><a href="{{ url('ui_patterns.patterns.single', {'name': pattern.definition.id}) }}">{{ pattern.label }}</a></h3>
         {{ pattern.meta }}
@@ -29,6 +37,7 @@
       </div>
       <hr class="my-5">
     {% endfor %}
+  {% endfor %}
   </div>
 
 </div>
