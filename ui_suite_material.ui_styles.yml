@@ -3,31 +3,53 @@ typography:
   label: Typography
   description: "Material Design's text sizes and styles were developed to balance content density and reading comfort under typical usage conditions. https://material.io/develop/web/components/typography"
   options:
-    mdc-typography--headline1: Headline variant 1. The largest text on the screen, reserved for short, important text or numerals.
-    mdc-typography--headline2: Headline variant 2
-    mdc-typography--headline3: Headline variant  3
-    mdc-typography--headline4: Headline variant  4
-    mdc-typography--headline5: Headline variant  5
-    mdc-typography--headline6: Headline variant  6
-    mdc-typography--subtitle1: Smaller than headline, reserved for medium-emphasis text that is shorter in length.
-    mdc-typography--subtitle2: Subtitle variant 2
-    mdc-typography--body1: Used for long-form writing
-    mdc-typography--body2: Body variant 2
-    mdc-typography--caption: Used sparingly to annotate imagery
-    mdc-typography--button: A call to action used by different types of buttons
-    mdc-typography--overline: Used sparingly to introduce a headline
+    mdc-typography--headline1:
+      label: Headline 1.
+      description: The largest text on the screen, reserved for short, important text or numerals.
+    mdc-typography--headline2: Headline 2
+    mdc-typography--headline3: Headline 3
+    mdc-typography--headline4: Headline 4
+    mdc-typography--headline5: Headline 5
+    mdc-typography--headline6: Headline 6
+    mdc-typography--subtitle1:
+      label: Subtitle 1
+      description: Smaller than headline, reserved for medium-emphasis text that is shorter in length.
+    mdc-typography--subtitle2: Subtitle 2
+    mdc-typography--body1:
+      label: Body 1
+      description: Used for long-form writing
+    mdc-typography--body2: Body 2
+    mdc-typography--caption:
+      label: Caption
+      description: Used sparingly to annotate imagery
+    mdc-typography--button:
+      label: Button
+      description: A call to action used by different types of buttons
+    mdc-typography--overline:
+      label: Overline
+      description: Used sparingly to introduce a headline
 
 # https://material.io/develop/web/docs/theming
 theme_color:
   label: Text color
   description: "MDC Web includes a theming system designed to make it easy to change your application's colors. It provides multiple options for implementing themes, allowing for maximum flexibility. https://material.io/develop/web/docs/theming"
+  category: Color
   options:
     mdc-theme--primary: Primary
-    mdc-theme--on-primary: On primary
+    mdc-theme--on-primary:
+      label: On primary
+      previewed_with:
+        - mdc-theme--primary-bg
     mdc-theme--secondary: Secondary
-    mdc-theme--on-secondary: On secondary
+    mdc-theme--on-secondary:
+      label: On secondary
+      previewed_with:
+        - mdc-theme--secondary-bg
     mdc-theme--error: Error
-    mdc-theme--on-error: On error
+    mdc-theme--on-error:
+      label: On error
+      previewed_with:
+        - mdc-theme--primary-bg
     mdc-theme--on-surface: On surface.
     mdc-theme--text-primary-on-background: Primary on background
     mdc-theme--text-secondary-on-background: Secondary on background
@@ -39,18 +61,36 @@ theme_color:
     mdc-theme--text-hint-on-light: Hint on light
     mdc-theme--text-disabled-on-light: Disabled on light
     mdc-theme--text-icon-on-light: Icon on light
-    mdc-theme--text-primary-on-dark: Primary on dark
-    mdc-theme--text-secondary-on-dark: Secondary on dark
-    mdc-theme--text-hint-on-dark: Hint on dark
-    mdc-theme--text-disabled-on-dark: Disabled on dark
-    mdc-theme--text-icon-on-dark: Icon on dark
+    mdc-theme--text-primary-on-dark:
+      label: Primary on dark
+      previewed_with:
+        - mdc-theme--primary-bg
+    mdc-theme--text-secondary-on-dark:
+      label: Secondary on dark
+      previewed_with:
+        - mdc-theme--primary-bg
+    mdc-theme--text-hint-on-dark:
+      label: Hint on dark
+      previewed_with:
+        - mdc-theme--primary-bg
+    mdc-theme--text-disabled-on-dark:
+      label: Disabled on dark
+      previewed_with:
+        - mdc-theme--primary-bg
+    mdc-theme--text-icon-on-dark:
+      label: Icon on dark
+      previewed_with:
+        - mdc-theme--primary-bg
 
 # https://material.io/develop/web/docs/theming
 theme_bg_color:
   label: Background color
   description: "MDC Web includes a theming system designed to make it easy to change your application's colors. It provides multiple options for implementing themes, allowing for maximum flexibility. https://material.io/develop/web/docs/theming"
+  category: Color
   options:
     mdc-theme--primary-bg: Primary.
     mdc-theme--secondary-bg: Secondary
-    mdc-theme--surface: Surface
+    mdc-theme--surface:
+      label: Surface
+      description: The background in components
     mdc-theme--background: Background
