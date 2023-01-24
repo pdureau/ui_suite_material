@@ -4,149 +4,144 @@
 
 mdc_theme_primary:
   label: "Primary color"
-  group: Colors
+  category: Colors
   type: color
-  default_value: "#6200ee"
-  scope: ":root"
-
+  default_values:
+    ":root": "#6200ee"
 mdc_theme_secondary:
   label: "Secondary color"
-  group: Colors
+  category: Colors
   type: color
-  default_value: "#018786"
-  scope: ":root"
-
+  default_values:
+    ":root": "#018786"
 mdc_theme_error:
   label: "Error color"
-  group: Colors
+  category: Colors
   type: color
-  default_value: "#b00020"
-  scope: ":root"
+  default_values:
+    ":root": "#b00020"
 
 # --------------
-# Text colors
+# Text colors (with alpha channel)
 # --------------
 
 mdc_theme_on_primary:
   label: "On primary color"
-  group: Text colors
-  type: color
-  default_value: "#ffffff"
-  scope: ":root"
-
+  category: Text colors
+  type: ui_skins_alpha_color
+  default_values:
+    ":root": "#ffffffff"
 mdc_theme_on_secondary:
   label: "On secondary color"
-  group: Text colors
-  type: color
-  default_value: "#ffffff"
-  scope: ":root"
-
+  category: Text colors
+  type: ui_skins_alpha_color
+  default_values:
+    ":root": "#ffffffff"
 mdc_theme_on_error:
   label: "On error color"
-  group: Text colors
-  type: color
-  default_value: "#ffffff"
-  scope: ":root"
-
+  category: Text colors
+  type: ui_skins_alpha_color
+  default_values:
+    ":root": "#ffffffff"
 mdc_theme_on_surface:
   label: "On surface color"
-  group: Text colors
-  type: color
-  default_value: "#000000"
-  scope: ":root"
+  category: Text colors
+  type: ui_skins_alpha_color
+  default_values:
+    ":root": "#000000ff"
 
 mdc_theme_text_primary_on_background:
   label: "Primary text color (on default background)"
-  group: Text colors
-  type: textfield
-  default_value: rgba(0, 0, 0, 0.87)
-  scope: ":root"
+  category: Text colors
+  type: ui_skins_alpha_color
+  default_values:
+    ":root": "#000000DE"
 mdc_theme_text_secondary_on_background:
   label: "Secondary text color (on default background)"
-  group: Text colors
-  type: textfield
-  default_value: rgba(0, 0, 0, 0.54)
-  scope: ":root"
+  category: Text colors
+  type: ui_skins_alpha_color
+  default_values:
+    ":root": "#000000C4"
 mdc_theme_text_hint_on_background:
   label: "Hint text color (on default background)"
-  group: Text colors
-  type: textfield
-  default_value: rgba(0, 0, 0, 0.38)
-  scope: ":root"
+  category: Text colors
+  type: ui_skins_alpha_color
+  default_values:
+    ":root": "#00000082"
 mdc_theme_text_disabled_on_background:
   label: "Disabled text color (on default background)"
-  group: Text colors
-  type: textfield
-  default_value: rgba(0, 0, 0, 0.38)
-  scope: ":root"
+  category: Text colors
+  type: ui_skins_alpha_color
+  default_values:
+    ":root": "#00000082"
 mdc_theme_text_icon_on_background:
   label: "Icon text color (on default background)"
-  group: Text colors
-  type: textfield
-  default_value: rgba(0, 0, 0, 0.38)
-  scope: ":root"
+  category: Text colors
+  type: ui_skins_alpha_color
+  default_values:
+    ":root": "#00000060"
 
 mdc_theme_text_primary_on_light:
   label: "Primary text color (on light)"
-  group: Text colors
-  type: textfield
-  default_value: rgba(0, 0, 0, 0.87)
-  scope: ":root"
+  category: Text colors
+  type: ui_skins_alpha_color
+  default_values:
+    ":root": "#000000dd"
 mdc_theme_text_secondary_on_light:
   label: "Secondary text color (on light)"
-  group: Text colors
-  type: textfield
-  default_value: rgba(0, 0, 0, 0.54)
-  scope: ":root"
+  category: Text colors
+  type: ui_skins_alpha_color
+  default_values:
+    ":root": "#00000089"
 mdc_theme_text_hint_on_light:
   label: "Hint text color (on light)"
-  group: Text colors
-  type: textfield
-  default_value: rgba(0, 0, 0, 0.38)
-  scope: ":root"
+  category: Text colors
+  type: ui_skins_alpha_color
+  default_values:
+    ":root": "#00000060"
 mdc_theme_text_disabled_on_light:
   label: "Disabled text color (on light)"
-  group: Text colors
-  type: textfield
-  default_value: rgba(0, 0, 0, 0.38)
-  scope: ":root"
+  category: Text colors
+  type: ui_skins_alpha_color
+  default_values:
+    ":root": "#00000060"
 mdc_theme_text_icon_on_light:
   label: "Icon text color (on light)"
-  group: Text colors
-  type: textfield
-  default_value: rgba(0, 0, 0, 0.38)
-  scope: ":root"
+  category: Text colors
+  type: ui_skins_alpha_color
+  default_values:
+    ":root": "#00000060"
 
 mdc_theme_text_primary_on_dark:
   label: "Primary text color (on dark)"
-  group: Text colors
-  type: textfield
-  default_value: white
-  scope: ":root"
+  category: Text colors
+  type: ui_skins_alpha_color
+  default_values:
+    ":root": "#ffffff"
 mdc_theme_text_secondary_on_dark:
   label: "Secondary text color (on dark)"
-  group: Text colors
-  type: textfield
-  default_value: rgba(255, 255, 255, 0.7)
-  scope: ":root"
+  category: Text colors
+  type: ui_skins_alpha_color
+  default_values:
+    ":root": "#000000b2"
 mdc_theme_text_hint_on_dark:
   label: "Hint text color (on dark)"
-  group: Text colors
-  type: textfield
-  default_value: rgba(255, 255, 255, 0.5)
-  scope: ":root"
+  category: Text colors
+  type: ui_skins_alpha_color
+  default_values:
+    ":root": "#0000007f"
 mdc_theme_text_disabled_on_dark:
   label: "Disabled text color (on dark)"
-  group: Text colors
-  type: textfield
-  default_value: rgba(255, 255, 255, 0.5)
-  scope: ":root"
+  category: Text colors
+  type: ui_skins_alpha_color
+  default_values:
+    ":root": "#0000007f"
 mdc_theme_text_icon_on_dark:
   label: "Icon text color (on dark)"
-  group: Text colors
-  type: textfield
-  default_value: rgba(255, 255, 255, 0.5)
-  scope: ":root"
+  category: Text colors
+  type: ui_skins_alpha_color
+  default_values:
+    ":root": "#0000007f"
 
 # --------------
 # Background colors
@@ -154,17 +149,17 @@ mdc_theme_text_icon_on_dark:
 
 mdc_theme_background:
   label: "Default background color"
-  group: Background colors
+  category: Background colors
   type: color
-  default_value: "#ffffff"
-  scope: ":root"
+  default_values:
+    ":root": "#ffffff"
 
 mdc_theme_surface:
   label: "Surface background color"
-  group: Background colors
+  category: Background colors
   type: color
-  default_value: "#ffffff"
-  scope: ":root"
+  default_values:
+    ":root": "#ffffff"
 
 # --------------
 # Grid
@@ -172,51 +167,83 @@ mdc_theme_surface:
 
 mdc_layout_grid_margin_desktop:
   label: "Margin (for desktop)"
-  group: Grid
+  category: Grid
   type: textfield
-  default_value: 24px
-  scope: ":root"
+  default_values:
+    ":root": 24px
 mdc_layout_grid_gutter_desktop:
   label: "Gutter (for desktop)"
-  group: Grid
+  category: Grid
   type: textfield
-  default_value: 24px
-  scope: ":root"
+  default_values:
+    ":root": 24px
 mdc_layout_grid_column_width_desktop:
   label: "Column width (for desktop)"
-  group: Grid
+  category: Grid
   type: textfield
-  default_value: 72px
+  default_values:
+    ":root": 72px
+
 mdc_layout_grid_margin_tablet:
   label: "Margin (for tablet)"
-  group: Grid
+  category: Grid
   type: textfield
-  default_value: 16px
-  scope: ":root"
+  default_values:
+    ":root": 16px
 mdc_layout_grid_gutter_tablet:
   label: "Gutter (for tablet)"
-  group: Grid
+  category: Grid
   type: textfield
-  default_value: 16px
-  scope: ":root"
+  default_values:
+    ":root": 16px
 mdc_layout_grid_column_width_tablet:
   label: "Column width (for tablet)"
-  group: Grid
+  category: Grid
   type: textfield
-  default_value: 72px
+  default_values:
+    ":root": 72px
+
 mdc_layout_grid_margin_phone:
   label: "Margin (for phone)"
-  group: Grid
+  category: Grid
   type: textfield
-  default_value: 16px
+  default_values:
+    ":root": 16px
 mdc_layout_grid_gutter_phone:
   label: "Gutter (for phone)"
-  group: Grid
+  category: Grid
   type: textfield
-  default_value: 16px
+  default_values:
+    ":root": 16px
 mdc_layout_grid_column_width_phone:
   label: "Column width (for phone)"
-  group: Grid
+  category: Grid
   type: textfield
-  default_value: 72px
-  scope: ":root"
+  default_values:
+    ":root": 72px
+
+# --------------
+# Shapes
+# --------------
+
+mdc_shape_small:
+  label: "Small"
+  description: Rounded shape radius size for small components.
+  category: Shape
+  type: textfield
+  default_values:
+    ":root": 4px
+mdc_shape_medium:
+  label: "Medium"
+  description: Rounded shape radius size for medium components.
+  category: Shape
+  type: textfield
+  default_values:
+    ":root": 4px
+mdc_shape_large:
+  label: "Large"
+  description: Rounded shape radius size for large components.
+  category: Shape
+  type: textfield
+  default_values:
+    ":root": 0px
