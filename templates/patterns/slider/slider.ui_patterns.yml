@@ -1,6 +1,6 @@
 slider:
   label: Slider
-  description: MDC Slider provides an implementation of the Material Design slider component. It is modeled after the browser's <input type="range"> element. Sliders are fully RTL-aware, and conform to the WAI-ARIA slider authoring practices. https://material.io/develop/web/components/sliders
+  description: MDC Slider provides an implementation of the Material Design slider component. It is modeled after the browser's <input type="range"> element. Sliders are fully RTL-aware, and conform to the WAI-ARIA slider authoring practices. https://m2.material.io/develop/web/components/sliders
   variants:
     default:
       label: Default (Continuous)

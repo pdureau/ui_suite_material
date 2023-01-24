@@ -1,6 +1,6 @@
 tabs:
   label: Tabs
-  description: Tabs organize content across different screens, data sets, and other interactions. https://material.io/components/tabs/web
+  description: Tabs organize content across different screens, data sets, and other interactions. https://m2.material.io/components/tabs/web
   fields:
     tabs:
       type: render

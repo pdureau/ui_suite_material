@@ -1,6 +1,6 @@
 tab:
   label: (Tab)
-  description: Use it only with Tabs component. https://material.io/components/tabs/web
+  description: Use it only with Tabs component. https://m2.material.io/components/tabs/web
   variants:
     default:
       label: Default

@@ -1,6 +1,6 @@
 card:
   label: Card
-  description: Cards contain content and actions about a single subject. https://material.io/components/cards
+  description: Cards contain content and actions about a single subject. https://m2.material.io/components/cards
   variants:
     default:
       label: Default

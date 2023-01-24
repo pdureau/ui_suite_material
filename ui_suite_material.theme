@@ -70,7 +70,7 @@ function _ui_suite_material_add_media_path($item): array {
 /**
  * Implements hook_preprocess_HOOK() for image_list patterns.
  *
- * See also: https://material.io/components/image-lists/web.
+ * See also: https://m2.material.io/components/image-lists/web.
  */
 function ui_suite_material_preprocess_pattern_image_list(array &$variables) {
   if (array_key_exists('items', $variables) && is_array($variables['items'])) {
@@ -88,7 +88,7 @@ function ui_suite_material_preprocess_pattern_image_list(array &$variables) {
 /**
  * Implements hook_preprocess_HOOK() for card patterns.
  *
- * See also: https://material.io/develop/web/components/cards.
+ * See also: https://m2.material.io/develop/web/components/cards.
  */
 function ui_suite_material_preprocess_pattern_card(array &$variables) {
   if ($variables['context']->getType() == 'preview') {
@@ -116,7 +116,7 @@ function ui_suite_material_preprocess_pattern_card(array &$variables) {
 /**
  * Implements hook_preprocess_HOOK() for banner patterns.
  *
- * See also: https://material.io/components/banners/.
+ * See also: https://m2.material.io/components/banners/.
  */
 function ui_suite_material_preprocess_pattern_banner(array &$variables) {
   if (array_key_exists('actions', $variables) && is_array($variables['actions'])) {
@@ -133,7 +133,7 @@ function ui_suite_material_preprocess_pattern_banner(array &$variables) {
 /**
  * Implements hook_preprocess_HOOK() for top_app_bar patterns.
  *
- * See also: https://material.io/components/app-bars-top.
+ * See also: https://m2.material.io/components/app-bars-top.
  */
 function ui_suite_material_preprocess_pattern_top_app_bar(array &$variables) {
   if (array_key_exists('navigation', $variables) && is_array($variables['navigation'])) {
@@ -151,7 +151,7 @@ function ui_suite_material_preprocess_pattern_top_app_bar(array &$variables) {
 /**
  * Implements hook_preprocess_HOOK() for snackbar patterns.
  *
- * See also: https://material.io/components/snackbars.
+ * See also: https://m2.material.io/components/snackbars.
  */
 function ui_suite_material_preprocess_pattern_snackbar(array &$variables) {
   if (array_key_exists('button', $variables) && is_array($variables['button'])) {

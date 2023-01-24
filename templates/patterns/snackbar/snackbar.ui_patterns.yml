@@ -1,6 +1,6 @@
 snackbar:
   label: Snackbar
-  description: Snackbars provide brief messages about app processes at the bottom of the screen. https://material.io/develop/web/components/snackbars
+  description: Snackbars provide brief messages about app processes at the bottom of the screen. https://m2.material.io/develop/web/components/snackbars
   variants:
     default:
       label: Default

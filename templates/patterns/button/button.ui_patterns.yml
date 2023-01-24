@@ -1,6 +1,6 @@
 button:
   label: Button
-  description: Buttons allow users to take actions, and make choices, with a single tap. https://material.io/components/buttons
+  description: Buttons allow users to take actions, and make choices, with a single tap. https://m2.material.io/components/buttons
   variants:
     default:
       label: Text

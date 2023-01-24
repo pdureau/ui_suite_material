@@ -1,5 +1,5 @@
 material:
-  remote: https://material.io/
+  remote: https://m2.material.io/
   license:
     name: MIT
     gpl-compatible: false

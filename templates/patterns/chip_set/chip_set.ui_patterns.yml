@@ -1,6 +1,6 @@
 chip_set:
   label: Chip set
-  description: A set of chips components. https://material.io/components/chips
+  description: A set of chips components. https://m2.material.io/components/chips
   variants:
     default:
       label: Default

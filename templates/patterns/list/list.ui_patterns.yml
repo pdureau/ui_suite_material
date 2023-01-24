@@ -1,6 +1,6 @@
 list:
   label: List
-  description: Lists are continuous, vertical indexes of text or images. https://material.io/components/lists
+  description: Lists are continuous, vertical indexes of text or images. https://m2.material.io/components/lists
   variants:
     default:
       label: Single-line

@@ -1,6 +1,6 @@
 image_list:
   label: Image list
-  description: Image lists display a collection of images in an organized grid. https://material.io/components/image-lists/web
+  description: Image lists display a collection of images in an organized grid. https://m2.material.io/components/image-lists/web
   variants:
     default:
       label: Default

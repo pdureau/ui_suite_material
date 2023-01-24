@@ -1,6 +1,6 @@
 menu:
   label: Menu
-  description: A menu displays a list of choices on a temporary surface. They appear when users interact with a button, action, or other control. https://material.io/components/menus/
+  description: A menu displays a list of choices on a temporary surface. They appear when users interact with a button, action, or other control. https://m2.material.io/components/menus/
   fields:
     items:
       type: render

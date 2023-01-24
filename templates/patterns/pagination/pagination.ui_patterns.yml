@@ -1,6 +1,6 @@
 pagination:
   label: Pagination
-  description: "Pagination controls provide swift access to all pages while indicating that more pages exist. https://material.io/components/data-tables/"
+  description: "Pagination controls provide swift access to all pages while indicating that more pages exist. https://m2.material.io/components/data-tables/"
   fields:
     first:
       type: array

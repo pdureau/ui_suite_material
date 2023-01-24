@@ -1,6 +1,6 @@
 chip:
   label: Chip
-  description: Chips are compact elements that allow users to enter information, select a choice, filter content, or trigger an action. https://material.io/components/chips
+  description: Chips are compact elements that allow users to enter information, select a choice, filter content, or trigger an action. https://m2.material.io/components/chips
   variants:
     default:
       label: Default

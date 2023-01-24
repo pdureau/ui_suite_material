@@ -1,7 +1,7 @@
-# https://material.io/develop/web/components/typography
+# https://m2.material.io/develop/web/components/typography
 typography:
   label: Typography
-  description: "Material Design's text sizes and styles were developed to balance content density and reading comfort under typical usage conditions. https://material.io/develop/web/components/typography"
+  description: "Material Design's text sizes and styles were developed to balance content density and reading comfort under typical usage conditions. https://m2.material.io/develop/web/components/typography"
   options:
     mdc-typography--headline1:
       label: Headline 1.
@@ -29,10 +29,10 @@ typography:
       label: Overline
       description: Used sparingly to introduce a headline
 
-# https://material.io/develop/web/docs/theming
+# https://m2.material.io/develop/web/docs/theming
 theme_color:
   label: Text color
-  description: "MDC Web includes a theming system designed to make it easy to change your application's colors. It provides multiple options for implementing themes, allowing for maximum flexibility. https://material.io/develop/web/docs/theming"
+  description: "MDC Web includes a theming system designed to make it easy to change your application's colors. It provides multiple options for implementing themes, allowing for maximum flexibility. https://m2.material.io/develop/web/docs/theming"
   category: Color
   options:
     mdc-theme--primary: Primary
@@ -82,10 +82,10 @@ theme_color:
       previewed_with:
         - mdc-theme--primary-bg
 
-# https://material.io/develop/web/docs/theming
+# https://m2.material.io/develop/web/docs/theming
 theme_bg_color:
   label: Background color
-  description: "MDC Web includes a theming system designed to make it easy to change your application's colors. It provides multiple options for implementing themes, allowing for maximum flexibility. https://material.io/develop/web/docs/theming"
+  description: "MDC Web includes a theming system designed to make it easy to change your application's colors. It provides multiple options for implementing themes, allowing for maximum flexibility. https://m2.material.io/develop/web/docs/theming"
   category: Color
   options:
     mdc-theme--primary-bg: Primary.

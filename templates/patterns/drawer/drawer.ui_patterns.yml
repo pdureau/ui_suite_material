@@ -1,6 +1,6 @@
 drawer:
   label: Navigation drawer
-  description: Navigation drawers provide access to destinations in your app. https://material.io/components/navigation-drawer
+  description: Navigation drawers provide access to destinations in your app. https://m2.material.io/components/navigation-drawer
   variants:
     default:
       label: Default

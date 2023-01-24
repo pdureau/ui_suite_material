@@ -1,6 +1,6 @@
 list_group:
   label: List group
-  description: Multiple related lists grouped together on a containing element.. https://material.io/components/lists
+  description: Multiple related lists grouped together on a containing element.. https://m2.material.io/components/lists
   settings:
     heading_level:
       type: select
