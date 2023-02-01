@@ -7,6 +7,12 @@ card:
     outlined:
       label: Outlined
   settings:
+    media_url:
+      type: textfield
+      label: Media URL
+      description: "The URL of the background-image."
+      default: ""
+      preview: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcsAAAECCAYAAACR5fw7AAADLklEQVR42u3VQREAMAgEsVL/Lk4oKMAAk0jYz1aSfgDA6ksAAGYJAGYJAGYJAGYJAGYJAGYJAGYJAGYJAJglAJglAJglAJglAJglAJglAJglAJglAGCWAGCWAGCWAGCWAGCWAGCWAGCWAGCWAIBZAoBZAoBZAoBZAoBZAoBZAoBZAoBZAoBZAgBmCQBmCQBmCQBmCQBmCQBmCQBmCQBmCQCYJQCYJQCYJQCYJQCYJQCYJQCYJQCYJQBglgBglgBglgBglgBglgBglgBglgBglgBglgCAWQKAWQKAWQKAWQKAWQKAWQKAWQKAWQIAZgkAZgkAZgkAZgkAZgkAZgkAZgkAZgkAmCUAmCUAmCUAmCUAmCUAmCUAmCUAmCUAmCUAYJYAYJYAYJYAYJYAYJYAYJYAYJYAYJYAgFkCgFkCgFkCgFkCgFkCgFkCgFkCgFkCAGYJAGYJAGYJAGYJAGYJAGYJAGYJAGYJAGYJAJglAJglAJglAJglAJglAJglAJglAJglAGCWAGCWAGCWAGCWAGCWAGCWAGCWAGCWAIBZAoBZAoBZAoBZAoBZAoBZAoBZAoBZAoBZAgBmCQBmCQBmCQBmCQBmCQBmCQBmCQBmCQCYJQCYJQCYJQCYJQCYJQCYJQCYJQCYJQBglgBglgBglgBglgBglgBglgBglgBglgBglgCAWQKAWQKAWQKAWQKAWQKAWQKAWQKAWQIAZgkAZgkAZgkAZgkAZgkAZgkAZgkAZgkAmCUAmCUAmCUAmCUAmCUAmCUAmCUAmCUAmCUAYJYAYJYAYJYAYJYAYJYAYJYAYJYAYJYAgFkCgFkCgFkCgFkCgFkCgFkCgFkCgFkCAGYJAGYJAGYJAGYJAGYJAGYJAGYJAGYJAGYJAJglAJglAJglAJglAJglAJglAJglAJglAGCWAGCWAGCWAGCWAGCWAGCWAGCWAGCWAIBZAoBZAoBZAoBZAoBZAoBZAoBZAoBZAoBZAgBmCQBmCQBmCQBmCQBmCQBmCQBmCQBmCQCYJQCYJQCYJQCYJQCYJQCYJQCYJQCYJQBglgBglgBglgBglgBglgBglgBglgBw3wAq6QTsJXMX3wAAAABJRU5ErkJggg=="
     media_scale:
       type: select
       label: Media scale
@@ -18,21 +24,12 @@ card:
   fields:
     header:
       type: render
-      label: Card header
+      label: Header
       description: Before the media
       preview:
         - type: html_tag
           tag: p
           value: Card header.
-    media:
-      type: render
-      label: Media
-      description: "The first image URL will be extracted and put in a custom background-image with background-size: cover"
-      preview:
-        - type: html_tag
-          tag: img
-          attributes:
-            src: assets/card.png
     media_content:
       type: render
       label: Media content
@@ -46,7 +43,7 @@ card:
             icon: search
     body:
       type: render
-      label: Card body
+      label: Body
       description: After the media
       preview:
         - type: html_tag

@@ -5,19 +5,12 @@
   {% endfor %}
 {% endif %}
 
-{% set media_attributes = create_attribute().addClass("mdc-card__media") %}
-{% set media_attributes = media_scale ? media_attributes.addClass("mdc-card__media--" ~ media_scale) : media_attributes %}
-
-{% set media_url = (media and media["#type"] == "html_tag") ? media["#attributes"]["src"] : "" %}
-{% set media_url = (media and media["#theme"] == "image") ? media["#uri"] : media_url %}
-{% set media_url = (media and media[0]["#type"] == "html_tag") ? media[0]["#attributes"]["src"] : media_url %}
-{% set media_url = (media and media[0]["#theme"] == "image") ? media[0]["#uri"] : media_url %}
-{% set media_attributes = media_url ? media_attributes.setAttribute("style", "background-image: url(" ~ media_url ~ ")") : media_attributes %}
-
 <div{{ attributes.addClass('mdc-card') }}>
   <div class="mdc-card__primary-action">
     {{ header }}
-    {% if media %}
+    {% if media_url %}
+    {% set media_attributes = create_attribute().addClass("mdc-card__media").setAttribute("style", "background-image: url(" ~ media_url ~ ")") %}
+    {% set media_attributes = media_scale ? media_attributes.addClass("mdc-card__media--" ~ media_scale) : media_attributes %}
     <div{{ media_attributes }} >
     {% if media_content %}
     <div class="mdc-card__media-content">

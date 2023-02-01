@@ -14,19 +14,13 @@ image_list:
       description: "A flat list of items, where each item is made of: - image: a renderable image. - label: an optional item label"
       preview:
         - image:
-            type: html_tag
-            tag: img
-            attributes:
-              src: assets/image-1.png
+            theme: image
+            uri: assets/image-1.png
         - label: Image 2
           image:
-            type: html_tag
-            tag: img
-            attributes:
-              src: assets/image-2.jpg
+            theme: image
+            uri: assets/image-2.jpg
         - label: Image 3
           image:
-            type: html_tag
-            tag: img
-            attributes:
-              src: assets/image-3.jpg
+            theme: image
+            uri: assets/image-3.jpg

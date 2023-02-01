@@ -14,15 +14,20 @@ banner:
       label: Text
       description: The banner text
       preview: There was a problem processing a transaction on your credit card.
-    actions:
+    primary_action:
       type: render
-      label: Action buttons
-      description: Renderable buttons.
+      label: Primary action
+      description: An optional single renderable button.
       preview:
         - type: "pattern"
           id: "button"
           fields:
             label: "Action 1"
+    secondary_action:
+      type: render
+      label: Secondary action
+      description: An optional single renderable button.
+      preview:
         - type: "pattern"
           id: "button"
           fields:

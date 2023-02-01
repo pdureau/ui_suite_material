@@ -1,70 +1,41 @@
 <?php
 
-use Drupal\Core\Template\Attribute;
-
 /**
  * @file
  * The ui_suite_material hooks.
  */
 
-/**
- * Add expected class to images.
- */
-function _ui_suite_material_add_image_class(&$item, string $class): void {
-  if (is_array($item) && array_key_exists('#theme', $item)) {
-    if ($item['#theme'] === 'image') {
-      $item['#attributes']['class'][] = $class;
-    }
-    if ($item['#theme'] === 'image_formatter') {
-      $item['#item_attributes']['class'][] =  $class;
-    }
-  }
-  if (is_array($item) && array_key_exists('#type', $item)) {
-    if ($item['#type'] === 'html_tag' && $item['#tag'] === 'img') {
-      $item['#attributes']['class'][] =  $class;
-    }
-  }
-  if (is_array($item)) {
-    foreach ($item as &$next) {
-      _ui_suite_material_add_image_class($next, $class);
-    }
-  }
-}
+use Drupal\Core\Template\Attribute;
 
 /**
- * Add theme base path to media.
+ * Add a value into the class attributes of a given element.
+ *
+ * Assumes element is an array.
+ * Inspired by: https://www.drupal.org/node/3334294
+ *
+ * @param array $element
+ *   An array.
+ * @param string[]|string ...$classes
+ *   The classes to add on element. Arguments can include string keys directly,
+ *   or arrays of string keys.
+ *
+ * @return array
+ *   The element with the given class(es) in attributes.
  */
-function _ui_suite_material_add_media_path($item): array {
-	$base_path = drupal_get_path('theme', 'ui_suite_material');
-  if (is_array($item) && array_key_exists('#theme', $item)) {
-    if ($item['#theme'] === 'image') {
-			$uri = isset($item['#uri']) ? implode('/', [
-				'',
-				$base_path,
-				$item['#uri'],
-			]) : '';
-			$item['#uri'] = $uri;
+function _ui_suite_material_add_class(array $element, ...$classes): array {
+  if (\array_is_list($element)) {
+    foreach ($element as $index => $item) {
+      if (!\is_array($item)) {
+        continue;
+      }
+      $element[$index] = _ui_suite_material_add_class($item, ...$classes);
     }
-	}
-  if (is_array($item) && array_key_exists('#type', $item)) {
-    if (($item['#type'] === 'html_tag') && ($item['#tag'] === 'img')) {
-			$uri = isset($item['#attributes']['src']) ? implode('/', [
-				'',
-				$base_path,
-				$item['#attributes']['src'],
-			]) : '';
-			$item['#attributes']['src'] = $uri;
-    }
-    elseif (($item['#type'] === 'html_tag') && ($item['#tag'] === 'video')) {
-			$uri = isset($item['#attributes']['poster']) ? implode('/', [
-				'',
-				$base_path,
-				$item['#attributes']['poster'],
-			]) : '';
-			$item['#attributes']['poster'] = $uri;
-    }
-	}
-	return $item;
+    return $element;
+  }
+  $attributes = new Attribute($element['#attributes'] ?? []);
+  $attributes->addClass(...$classes);
+  $element['#attributes'] = $attributes->toArray();
+  return $element;
 }
 
 /**
@@ -74,12 +45,9 @@ function _ui_suite_material_add_media_path($item): array {
  */
 function ui_suite_material_preprocess_pattern_image_list(array &$variables) {
   if (array_key_exists('items', $variables) && is_array($variables['items'])) {
-    foreach ($variables['items'] as &$item) {
-      if (array_key_exists('image', $item)) {
-        _ui_suite_material_add_image_class($item['image'], 'mdc-image-list__image');
-        if ($variables['context']->getType() == 'preview') {
-        	  $item['image'] = _ui_suite_material_add_media_path($item['image']);
-        }
+    foreach ($variables['items'] as $index => $item) {
+      if (array_key_exists('image', $item)&& is_array($item['image'])) {
+        $variables['items'][$index]['image'] = _ui_suite_material_add_class($item['image'], 'mdc-image-list__image');
       }
     }
   }
@@ -93,23 +61,15 @@ function ui_suite_material_preprocess_pattern_image_list(array &$variables) {
 function ui_suite_material_preprocess_pattern_card(array &$variables) {
   if ($variables['context']->getType() == 'preview') {
     $variables['attributes']['style'] = "max-width: 600px";
-    if (array_key_exists('media', $variables) && is_array($variables['media'])) {
-      foreach ($variables['media'] as &$media) {
-         $media = _ui_suite_material_add_media_path($media);
-      }
-    }
   }
-    
   if (array_key_exists('action_buttons', $variables) && is_array($variables['action_buttons'])) {
-    foreach ($variables['action_buttons'] as &$item) {
-      $item['#attributes']['class'][] = 'mdc-card__action';
-      $item['#attributes']['class'][] = 'mdc-card__action--button';
-    }
+    $variables['action_buttons'] = _ui_suite_material_add_class(
+      $variables['action_buttons'],
+      ['mdc-card__action', 'mdc-card__action--button']
+    );
   }
   if (array_key_exists('action_icons', $variables) && is_array($variables['action_icons'])) {
-    foreach ($variables['action_icons'] as &$item) {
-      $item['#attributes']['class'][] = 'mdc-card__action';
-    }
+    $variables['action_icons'] = _ui_suite_material_add_class($variables['action_icons'], 'mdc-card__action');
   }
 }
 
@@ -119,14 +79,11 @@ function ui_suite_material_preprocess_pattern_card(array &$variables) {
  * See also: https://m2.material.io/components/banners/.
  */
 function ui_suite_material_preprocess_pattern_banner(array &$variables) {
-  if (array_key_exists('actions', $variables) && is_array($variables['actions'])) {
-    foreach ($variables['actions'] as $delta => &$item) {
-      if ($delta === 0) {
-        $item['#attributes']['class'][] = 'mdc-banner__primary-action';
-        continue;
-      }
-      $item['#attributes']['class'][] = 'mdc-banner__secondary-action';
-    }
+  if (array_key_exists('primary_action', $variables) && is_array($variables['primary_action'])) {
+    $variables['primary_action'] = _ui_suite_material_add_class($variables['primary_action'], 'mdc-banner__primary-action');
+  }
+  if (array_key_exists('secondary_action', $variables) && is_array($variables['secondary_action'])) {
+    $variables['secondary_action'] = _ui_suite_material_add_class($variables['secondary_action'], 'mdc-banner__secondary-action');
   }
 }
 
@@ -137,14 +94,10 @@ function ui_suite_material_preprocess_pattern_banner(array &$variables) {
  */
 function ui_suite_material_preprocess_pattern_top_app_bar(array &$variables) {
   if (array_key_exists('navigation', $variables) && is_array($variables['navigation'])) {
-    foreach ($variables['navigation'] as &$item) {
-      $item['#attributes']['class'][] = 'mdc-top-app-bar__navigation-icon';
-    }
+    $variables['navigation'] = _ui_suite_material_add_class($variables['navigation'], 'mdc-top-app-bar__navigation-icon');
   }
   if (array_key_exists('buttons', $variables) && is_array($variables['buttons'])) {
-    foreach ($variables['buttons'] as &$item) {
-      $item['#attributes']['class'][] = 'mdc-top-app-bar__action-item';
-    }
+    $variables['buttons'] = _ui_suite_material_add_class($variables['buttons'], 'mdc-top-app-bar__action-item');
   }
 }
 
@@ -155,8 +108,19 @@ function ui_suite_material_preprocess_pattern_top_app_bar(array &$variables) {
  */
 function ui_suite_material_preprocess_pattern_snackbar(array &$variables) {
   if (array_key_exists('button', $variables) && is_array($variables['button'])) {
-    foreach ($variables['button'] as &$item) {
-      $item['#attributes']['class'][] = 'mdc-snackbar__action';
-    }
+    $variables['button'] = _ui_suite_material_add_class($variables['button'], 'mdc-snackbar__action');
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for 'image'.
+ *
+ * Convert relative path to full path.
+ */
+function ui_suite_material_preprocess_image(array &$variables): void {
+  $uri = $variables["uri"];
+  $is_absolute = isset(parse_url($uri)['host']) || \str_starts_with($uri, "/") || \str_starts_with($uri, "data:");
+  if (!$is_absolute) {
+    $variables["attributes"]["src"] = base_path() . $variables["directory"] . "/" . $uri;
   }
 }

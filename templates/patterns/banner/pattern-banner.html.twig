@@ -17,9 +17,10 @@
       </div>
       {% endif %}
     </div>
-      {% if actions %}
+      {% if primary_action or secondary_action %}
     <div class="mdc-banner__actions">
-      {{ actions }}
+      {{ primary_action }}
+      {{ secondary_action }}
     </div>
     {% endif %}
   </div>
