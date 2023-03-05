@@ -6,7 +6,7 @@ chip:
       label: Default
     selected:
       label: Pre-selected
-      descrition: Useful only inside a 'choice' chip set.
+      description: Useful only inside a 'choice' chip set.
     touch:
       label: Touch
   fields:
