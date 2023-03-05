@@ -4,23 +4,50 @@ image_list:
   variants:
     default:
       label: Default
+    with_text_protection:
+      label: With text protection
+      description: Indicates that supporting content should be positioned in a scrim overlaying each image (instead of positioned separately under each image).
     masonry:
       label: Masonry
       description: Presents images vertically arranged into several columns, using CSS Columns.
+  settings:
+    gutter_size:
+      type: number
+      label: Gutter size (in px)
+      default: 4
+      preview: 4
+    column_count:
+      type: number
+      label: Column count
+      description: Images by row
+      default: 5
+      preview: 5
   fields:
-    items:
-      type: array
+    images:
+      type: render
       label: Items
       description: "A flat list of items, where each item is made of: - image: a renderable image. - label: an optional item label"
       preview:
-        - image:
-            theme: image
-            uri: assets/image-1.png
-        - label: Image 2
-          image:
-            theme: image
-            uri: assets/image-2.jpg
-        - label: Image 3
-          image:
-            theme: image
-            uri: assets/image-3.jpg
+        - theme: image
+          uri: assets/image-1.png
+        - theme: image
+          uri: assets/image-2.jpg
+        - theme: image
+          uri: assets/image-3.jpg
+        - theme: image
+          uri: assets/image-2.jpg
+        - theme: image
+          uri: assets/image-1.png
+        - theme: image
+          uri: assets/image-3.jpg
+    labels:
+      type: render
+      label: Labels
+      description: "A label per image. Can be empty if image as no label."
+      preview:
+        - "Portrait blue"
+        - "Landscape yellow"
+        - "Landscape turquoise"
+        - "Landscape yellow"
+        - "Portrait blue"
+        - "Landscape turquoise"

@@ -44,12 +44,8 @@ function _ui_suite_material_add_class(array $element, ...$classes): array {
  * See also: https://m2.material.io/components/image-lists/web.
  */
 function ui_suite_material_preprocess_pattern_image_list(array &$variables) {
-  if (array_key_exists('items', $variables) && is_array($variables['items'])) {
-    foreach ($variables['items'] as $index => $item) {
-      if (array_key_exists('image', $item)&& is_array($item['image'])) {
-        $variables['items'][$index]['image'] = _ui_suite_material_add_class($item['image'], 'mdc-image-list__image');
-      }
-    }
+  if (array_key_exists('images', $variables) && is_array($variables['images'])) {
+    $variables['images'] = _ui_suite_material_add_class($variables['images'], 'mdc-image-list__image');
   }
 }
 
