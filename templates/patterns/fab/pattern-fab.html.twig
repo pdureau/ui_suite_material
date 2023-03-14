@@ -6,13 +6,22 @@
 {% if 'touch' in variant %}
 <div class="mdc-touch-target-wrapper">
 {% endif %}
-<button{{ attributes.addClass('mdc-fab').setAttribute('aria-label', 'Favorite') }}>
+{% if url or attributes.href %}
+  {% set url = url|default(attributes.href) %}
+<a{{ attributes.addClass('mdc-fab').setAttribute('href', url) }}>
+{% else %}
+<button{{ attributes.addClass('mdc-fab') }}>
+{% endif %}
   <div class="mdc-fab__ripple"></div>
   <span class="mdc-fab__icon material-icons">{{ icon }}</span>
   {% if label and variant == 'extended' %}
   <span class="mdc-fab__label">{{ label }}</span>
   {% endif %}
+{% if url or attributes.href %}
+</a>
+{% else %}
 </button>
+{% endif %}
 {% if 'touch' in variant %}
 </div>
 {% endif %}

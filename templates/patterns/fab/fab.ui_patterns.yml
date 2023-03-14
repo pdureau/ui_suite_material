@@ -16,10 +16,15 @@ fab:
   fields:
     label:
       type: text
-      label: Text
-      description: The FAB label (for extended variant only).
+      label: Label
+      description: For extended variant only.
       preview: Search
   settings:
+    url:
+      type: url
+      label: URL
+      description: The button URL. Optional.
+      preview: http://example.com
     icon:
       type: textfield
       label: Icon

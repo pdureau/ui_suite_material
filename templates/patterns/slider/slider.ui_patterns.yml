@@ -17,27 +17,28 @@ slider:
       label: "Discrete range"
     disabled:
       label: Disabled
-  fields:
+  settings:
     value:
-      type: integer
+      type: number
       label: Value
       preview: 50
     value_end:
-      type: integer
+      type: number
       label: End value (for range only)
       preview: 70
     min:
-      type: integer
+      type: number
       label: Minimum
       preview: 0
     max:
-      type: integer
+      type: number
       label: Maximum
       preview: 100
     name:
-      type: text
+      type: token
       label: Machine name
       preview: volume
+  fields:
     label:
       type: text
       label: Label

@@ -7,12 +7,12 @@ icon_button:
       label: Label
       description: The button label
       preview: Submit
+  settings:
     url:
-      type: text
+      type: url
       label: URL
       description: The button URL. Optional.
       preview: http://example.com
-  settings:
     icon:
       type: textfield
       label: Icon

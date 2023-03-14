@@ -25,8 +25,8 @@ image_list:
   fields:
     images:
       type: render
-      label: Items
-      description: "A flat list of items, where each item is made of: - image: a renderable image. - label: an optional item label"
+      label: Images
+      description: "A flat list of renderable images."
       preview:
         - theme: image
           uri: assets/image-1.png
