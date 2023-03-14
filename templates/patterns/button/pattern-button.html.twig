@@ -5,7 +5,7 @@
 {% set icon_position = icon_position|default('left') %}
 
 {% if url or attributes.href %}
-  {% set url = url ?: attributes.href %}
+  {% set url = url|default(attributes.href) %}
   <a{{ attributes.addClass('mdc-button').setAttribute('href', url) }}>
     {% if icon and icon_position == "left" %}
     <i class="material-icons mdc-button__icon" aria-hidden="true">{{ icon }}</i>

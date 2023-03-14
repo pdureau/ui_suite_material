@@ -1,8 +1,6 @@
-{% if variant != '' and variant|lower != 'default' %}
-  {% set variants = variant|split('__') %}
-  {% for variant in variants %}
-    {% set attributes = attributes.addClass('mdc-fab--' ~ variant|lower|replace({'_': '-'})) %}
-  {% endfor %}
+{% if variant and variant|lower != 'default' %}
+  {% set variants = variant|split('__')|map(v => v|lower|replace({(v): 'mdc-fab--' ~ v})|replace({'_': '-'})) %}
+  {% set attributes = attributes.addClass(variants) %}
 {% endif %}
 
 {% if 'touch' in variant %}
