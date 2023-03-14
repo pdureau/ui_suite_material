@@ -7,7 +7,7 @@
   {% set gutter_size = gutter_size|default(4) %}
   {% set column_count = column_count|default(4) %}
   <li class="mdc-image-list__item" style="width: calc(100% / {{ column_count|default(5) }}  - {{ gutter_size +  1/ column_count }}px); margin: {{ gutter_size/2 }}px;">
-    {% if variant is same as ("masonry") %}
+    {% if variant == "masonry" %}
     {{ image }}
     {% else %}
     <div class="mdc-image-list__image-aspect-container">
