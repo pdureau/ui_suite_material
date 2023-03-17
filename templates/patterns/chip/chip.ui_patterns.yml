@@ -6,12 +6,23 @@ chip:
       label: Default
     selected:
       label: Pre-selected
-      description: Useful only inside a 'choice' chip set.
+      description: Colored inside a 'choice' chip set.
     touch:
       label: Touch
+      description: Extend the input beyond the visual bounds of the element.
+  settings:
+    icon:
+      label: Icon
+      type: textfield
+      descrioption: Replaced by the checkmark on selected variant.
+      preview: event
   fields:
     text:
       type: text
       label: Text
       description: The chip text
       preview: Add to calendar
+  libraries:
+    - chip:
+        dependencies:
+          - ui_suite_material/material_icons
