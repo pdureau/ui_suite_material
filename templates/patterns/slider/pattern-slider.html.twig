@@ -1,12 +1,11 @@
 {% set discrete = false %}
 {% set range = false %}
-{% if variant != '' and variant|lower != 'default' %}
+{% if variant and variant|lower != 'default' %}
   {% set variants = variant|split('__') %}
-  {% for variant in variants %}
-    {% set discrete = (variant == "discrete")? true : discrete %}
-    {% set range = (variant == "range")? true : range %}
-    {% set attributes = attributes.addClass('mdc-slider--' ~ variant|lower|replace({'_': '-'})) %}
-  {% endfor %}
+  {% set discrete = ("discrete" in variants) %}
+  {% set range = ("range" in variants) %}
+  {% set variants = variants|map(v => v|lower|replace({(v): 'mdc-slider--' ~ v})|replace({'_': '-'})) %}
+  {% set attributes = attributes.addClass(variants) %}
 {% endif %}
 
 <div{{ attributes.addClass('mdc-slider') }}>
