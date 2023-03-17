@@ -1,0 +1,22 @@
+breadcrumbs:
+  label: Breadcrumbs
+  description: Indicate the current page’s location within a navigational hierarchy that automatically adds separators via CSS. Taken from Michael Richins because doesn't exist in https://m2.material.io/
+  variants:
+    default: Default
+    dark: Dark
+  fields:
+    items:
+      type: array
+      label: Items
+      description: A Drupal breadcrumb structure.
+      preview:
+        - text: Home
+          url: "#"
+        - text: Library
+          url: "#"
+        - text: Data
+  libraries:
+    - breadcrumb:
+        css:
+          component:
+            "breadcrumbs.css": {}

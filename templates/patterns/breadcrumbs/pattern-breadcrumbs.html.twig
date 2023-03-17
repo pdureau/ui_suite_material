@@ -1,0 +1,15 @@
+{% if variant != '' and variant|lower != 'default' %}
+  {% set attributes = attributes.addClass('mdc-breadcrumbs--' ~ variant|lower|replace({'_': '-'})) %}
+{% endif %}
+
+<nav {{ attributes.addClass('mdc-breadcrumbs').setAttribute('aria-label', 'breadcrumb') }}>
+  {% for item in items %}
+    {% if item.url %}
+      <a class="mdc-breadcrumbs__link" href="{{ item.url }}">{{ item.text }}</a>
+    {% else %}
+      <span class="mdc-breadcrumbs__link" href="{{ item.url }}" aria-current="page">{{ item.text }}</span>
+    {% endif %}
+  {% endfor %}
+</nav>
+
+
