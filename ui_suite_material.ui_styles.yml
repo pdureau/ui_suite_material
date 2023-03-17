@@ -106,11 +106,11 @@ elevation:
   label: Elevation
   description: "For practical reason, only fibonacci values are proposed here."
   options:
-    mdc-elevation--z0: 0
-    mdc-elevation--z1: 1
-    mdc-elevation--z2: 2
-    mdc-elevation--z3: 3
-    mdc-elevation--z5: 5
-    mdc-elevation--z8: 8
-    mdc-elevation--z13: 13
-    mdc-elevation--z21: 21
+    mdc-elevation--z0: Elevation 0
+    mdc-elevation--z1: Elevation 1
+    mdc-elevation--z2: Elevation 2
+    mdc-elevation--z3: Elevation 3
+    mdc-elevation--z5: Elevation 5
+    mdc-elevation--z8: Elevation 8
+    mdc-elevation--z13: Elevation 13
+    mdc-elevation--z21: Elevation 21

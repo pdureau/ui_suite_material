@@ -1,5 +1,5 @@
 grid_row:
-  label: "Grid Row"
+  label: "Grid row"
   description: "Material design’s responsive UI is based on a column-variate grid layout. It has 12 columns on desktop, 8 columns on tablet and 4 columns on phone. https://m2.material.io/develop/web/supporting/layout-grid"
   settings:
     span:

@@ -10,7 +10,7 @@ fab:
       label: Touch
       description: Extend the input beyond the visual bounds of the element.
     mini__touch:
-      label: Mini & Touch
+      label: Mini & touch
       description: Extend the input beyond the visual bounds of the element.
     extended:
       label: Extended

@@ -1,5 +1,5 @@
 icon_button:
-  label: Icon Button
+  label: Icon button
   description: To use inside "Top app bar" or "Card" components.
   fields:
     label:
