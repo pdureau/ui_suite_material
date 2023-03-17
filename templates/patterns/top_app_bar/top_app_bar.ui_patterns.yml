@@ -22,10 +22,10 @@ top_app_bar:
       label: Navigation button
       description: Renderable icon button.
       preview:
-        - type: pattern
-          id: icon_button
-          label: Open navigation menu
-          icon: menu
+        type: pattern
+        id: icon_button
+        label: Open navigation menu
+        icon: menu
     title:
       type: text
       label: Title

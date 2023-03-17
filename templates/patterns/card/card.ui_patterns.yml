@@ -27,30 +27,30 @@ card:
       label: Header
       description: Before the media
       preview:
-        - type: html_tag
-          tag: p
-          attributes:
-            style: "padding: 1rem;"
-          value: Card header.
+        type: html_tag
+        tag: p
+        attributes:
+          style: "padding: 1rem;"
+        value: Card header.
     media_content:
       type: render
       label: Media content
       description: An absolutely-positioned box the same size as the media area, for displaying a title or icon on top of the background-image.
       preview:
-        - type: "pattern"
-          id: "icon_button"
-          fields:
-            label: "More options"
-          settings:
-            icon: search
+        type: "pattern"
+        id: "icon_button"
+        fields:
+          label: "More options"
+        settings:
+          icon: search
     body:
       type: render
       label: Body
       description: After the media
       preview:
-        - type: html_tag
-          tag: p
-          value: Card body.
+        type: html_tag
+        tag: p
+        value: Card body.
     action_buttons:
       type: render
       label: Action buttons

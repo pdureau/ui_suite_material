@@ -21,10 +21,10 @@ snackbar:
       label: Button
       description: Renderable button component.
       preview:
-        - type: pattern
-          id: button
-          label: Retry
-          url: "#"
+        type: pattern
+        id: button
+        label: Retry
+        url: "#"
   settings:
     role:
       type: select

@@ -19,19 +19,19 @@ banner:
       label: Primary action
       description: An optional single renderable button.
       preview:
-        - type: "pattern"
-          id: "button"
-          fields:
-            label: "Action 1"
+        type: "pattern"
+        id: "button"
+        fields:
+          label: "Action 1"
     secondary_action:
       type: render
       label: Secondary action
       description: An optional single renderable button.
       preview:
-        - type: "pattern"
-          id: "button"
-          fields:
-            label: "Action 2"
+        type: "pattern"
+        id: "button"
+        fields:
+          label: "Action 2"
   settings:
     graphic:
       type: textfield
