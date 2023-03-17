@@ -29,6 +29,8 @@ card:
       preview:
         - type: html_tag
           tag: p
+          attributes:
+            style: "padding: 1rem;"
           value: Card header.
     media_content:
       type: render

@@ -16,3 +16,8 @@ body {
 a {
   text-decoration: none;
 }
+
+/* Taken from https://material-components.github.io/material-components-web-catalog/#/component/card */
+.mdc-card__content {
+  padding: 1rem;
+}
