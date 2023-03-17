@@ -88,9 +88,29 @@ theme_bg_color:
   description: "MDC Web includes a theming system designed to make it easy to change your application's colors. It provides multiple options for implementing themes, allowing for maximum flexibility. https://m2.material.io/develop/web/docs/theming"
   category: Color
   options:
-    mdc-theme--primary-bg: Primary.
-    mdc-theme--secondary-bg: Secondary
+    mdc-theme--primary-bg:
+      label: Primary
+      previewed_with:
+        - mdc-theme--text-primary-on-dark
+    mdc-theme--secondary-bg:
+      label: Secondary
+      previewed_with:
+        - mdc-theme--on-secondary
     mdc-theme--surface:
       label: Surface
       description: The background in components
     mdc-theme--background: Background
+
+# https://material-components.github.io/material-components-web-catalog/#/component/elevation
+elevation:
+  label: Elevation
+  description: "For practical reason, only fibonacci values are proposed here."
+  options:
+    mdc-elevation--z0: 0
+    mdc-elevation--z1: 1
+    mdc-elevation--z2: 2
+    mdc-elevation--z3: 3
+    mdc-elevation--z5: 5
+    mdc-elevation--z8: 8
+    mdc-elevation--z13: 13
+    mdc-elevation--z21: 21
