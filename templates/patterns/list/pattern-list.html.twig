@@ -1,18 +1,11 @@
 {% if variant != '' and variant|lower != 'default' %}
-  {% set attributes = attributes.addClass('mdc-list--' ~ variant|lower|replace({'_': '-'})) %}
+  {% set attributes = attributes.addClass('mdc-deprecated-list--' ~ variant|lower|replace({'_': '-'})) %}
 {% endif %}
 
-<ul{{ attributes.addClass('mdc-list') }}>
-  {% for item in items %}
-  <li class="mdc-list-item">
-    <span class="mdc-list-item__ripple"></span>
-    {% if item is iterable and item.title and item.url %}
-    <a href="{{ item.url }}" class="mdc-list-item__text">{{  item.title }}</a>
-    {% elseif item is iterable and item.title and not item.url %}
-    <span class="mdc-list-item__text">{{  item.title }}</span>
-    {% elseif item is not iterable %}
-    <span class="mdc-list-item__text">{{  item }}</span>
-    {% endif %}
-  </li>
-  {% endfor %}
+{% if header %}
+{% set heading_level = heading_level|default('3') %}
+<h{{ heading_level }} class="mdc-list-group__subheader">{{ header }}</h{{ heading_level }}>
+{% endif %}
+<ul{{ attributes.addClass('mdc-deprecated-list') }}>
+  {{ items }}
 </ul>

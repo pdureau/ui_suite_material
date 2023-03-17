@@ -1,6 +1,7 @@
 list_group:
   label: List group
-  description: Multiple related lists grouped together on a containing element.. https://m2.material.io/components/lists
+  description: Multiple related lists grouped together on a containing element. https://m2.material.io/components/lists
+  category: Lists
   settings:
     heading_level:
       type: select
@@ -14,17 +15,38 @@ list_group:
       preview: 3
   fields:
     lists:
-      type: array
+      type: render
       label: Lists
-      description: "A nested (2 levels) list of items, where each item can be a string, or a dictionary with: attributes: HTML attributes for the item. title: The item title. url: An optional link url."
+      description: "A list of list patterns."
       preview:
-        - title: Header 1
-          below:
-            - title: Item 1.1
-            - title: Item 1.2
-        - title: Header 2
-          url: "#"
-          below:
-            - title: Item 2.1
-              url: "#"
-            - Item 2.2
+        - type: pattern
+          id: list
+          header: First list
+          items:
+            - type: pattern_preview
+              id: list_item
+              html_element: li
+            - type: pattern_preview
+              id: list_item
+              html_element: li
+              variant: selected
+            - type: pattern_preview
+              id: list_item
+              html_element: li
+            - type: pattern_preview
+              id: list_item
+              html_element: li
+            - type: pattern_preview
+              id: list_item
+              html_element: li
+              variant: disabled
+        - type: pattern
+          id: list
+          header: Second list
+          items:
+            - type: pattern_preview
+              id: list_item
+              html_element: li
+            - type: pattern_preview
+              id: list_item
+              html_element: li

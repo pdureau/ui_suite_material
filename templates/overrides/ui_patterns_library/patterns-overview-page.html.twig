@@ -11,20 +11,20 @@
   <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-phone mdc-layout-grid__cell--span-4">
     <h2 class="hidden">{{ "Available patterns"|t }}</h2>
     {# List of available patterns with anchor links. #}
-    <ul class="mdc-list ">
+    <div class="mdc-list-group">
       {% for group_name, group_patterns in patterns %}
         {% if patterns|length > 1 %}
-          <h3>{{ group_name }}</h3>
+          <h3 class="mdc-list-group__subheader">{{ group_name }}</h3>
         {% endif %}
-        <ul>
+        <ul class="mdc-deprecated-list">
           {% for pattern_name, pattern in group_patterns %}
-           <li class="mdc-list-item">
-              <a href="#{{ pattern_name }}">{{ pattern.label }}</a>
+           <li class="mdc-deprecated-list-item">
+              <a class="mdc-deprecated-list-item__text" href="#{{ pattern_name }}">{{ pattern.label }}</a>
             </li>
           {% endfor %}
         </ul>
       {% endfor %}
-    </ul>
+    </div>
   </div>
 
   <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-phone mdc-layout-grid__cell--span-8">

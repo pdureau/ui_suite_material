@@ -1,6 +1,7 @@
 list:
   label: List
   description: Lists are continuous, vertical indexes of text or images. https://m2.material.io/components/lists
+  category: Lists
   variants:
     default:
       label: Single-line
@@ -9,15 +10,44 @@ list:
       label: Dense
       description: Styles the density of the list, making it appear more compact.
   fields:
+    header:
+      type: text
+      label: Header
+      description: Only when embedded in list_group pattern.
     items:
-      type: array
+      type: render
       label: Items
-      description: "A flat list of items, where each item can be a string, or a dictionary with: attributes: HTML attributes for the item. title: The item title. url: An optional link url."
+      description: "A list of list_item components"
       preview:
-        - title: Item 1
-        - title: Item 2
-          url: "#"
-        - "Item 3"
+        - type: pattern_preview
+          id: list_item
+          html_element: li
+        - type: pattern_preview
+          id: list_item
+          html_element: li
+          variant: selected
+        - type: pattern_preview
+          id: list_item
+          html_element: li
+        - type: pattern_preview
+          id: list_item
+          html_element: li
+        - type: pattern_preview
+          id: list_item
+          html_element: li
+          variant: disabled
+  settings:
+    heading_level:
+      type: select
+      label: "Heading level"
+      description: Only when embedded in list_group pattern.
+      options:
+        2: h2
+        3: h3 (Default)
+        4: h4
+        5: h5
+        6: h6
+      preview: 3
   libraries:
     - list_init:
         js:

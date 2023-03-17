@@ -1,0 +1,55 @@
+list_item:
+  label: (List item)
+  description: To be used inside list components. https://m2.material.io/components/lists
+  category: Lists
+  variants:
+    default:
+      label: Default
+    disabled:
+      label: Disbaled
+    selected:
+      label: Selected
+    activated:
+      label: Activated
+  fields:
+    avatar:
+      label: Avatar
+      type: image
+      description: "Placed at the start. Doesn't work well with icon_before"
+    text:
+      label: Text
+      type: text
+      description: Mandatory
+      preview: "List item"
+    secondary_text:
+      label: Secondary text
+      type: text
+      description: Generate a second line of text.
+      preview: "List item"
+    meta:
+      label: Meta
+      type: text
+      description: "A short text placed at the end. Doesn't work well with icon_after"
+    icon_after:
+      label: Icon (after)
+      type: icon_button
+      description: "Placed at the end. Doesn't work well with meta"
+      preview:
+        type: pattern
+        id: icon_button
+        icon: more_vert
+  settings:
+    icon_before:
+      label: Icon (before)
+      type: token
+      description: "Placed at the start. Doesn't work well with avatar. Icon list in https://fonts.google.com/icons?selected=Material+Icons"
+      preview: favorite
+    html_element:
+      type: "select"
+      label: "HTML element"
+      description: "Use li for usage inside a list. Otherwise stick to div."
+      options:
+        div: "div (default)"
+        li: "li"
+      default: "div"
+      preview: "div"

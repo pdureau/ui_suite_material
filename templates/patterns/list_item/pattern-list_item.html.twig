@@ -1,0 +1,31 @@
+{% if variant != '' and variant|lower != 'default' %}
+  {% set attributes = attributes.addClass('mdc-deprecated-list-item--' ~ variant|lower|replace({'_': '-'})) %}
+{% endif %}
+
+<{{ html_element|default("div") }} {{ attributes.addClass(["mdc-deprecated-list-item", "mdc-ripple-upgraded"]) }}>
+  {% if avatar  %}
+  <span class="mdc-deprecated-list-item__graphic" aria-hidden="true">
+    {{ avatar }}
+  </span>
+  {% endif  %}
+  {% if icon_before  %}
+  <span class="mdc-deprecated-list-item__graphic material-icons" aria-hidden="true">
+    {{ icon_before }}
+  </span>
+  {% endif  %}
+  {% if text and not secondary_text %}
+  <span class="mdc-deprecated-list-item__text">{{ text }}</span>
+  {% endif %}
+  {% if text and secondary_text %}
+    <span class="mdc-deprecated-list-item__text">
+      <span class="mdc-deprecated-list-item__primary-text">{{ text }}</span>
+      <span class="mdc-deprecated-list-item__secondary-text">{{ secondary_text }}</span>
+    </span>
+  {% endif %}
+  {% if meta or icon_after %}
+  <span aria-hidden="true" class="mdc-deprecated-list-item__meta">
+    {{ meta }}
+    {{ icon_after }}
+  </span>
+  {% endif %}
+</{{ html_element|default("div") }}>
