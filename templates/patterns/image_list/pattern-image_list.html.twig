@@ -2,18 +2,15 @@
   {% set attributes = attributes.addClass('mdc-image-list--' ~ variant|lower|replace({'_': '-'})) %}
 {% endif %}
 
+{% set gutter_size = gutter_size|default(4) %}
+{% set column_count = column_count|default(4) %}
+
 <ul{{ attributes.addClass('mdc-image-list') }}>
-  {% for image in images %}
-  {% set gutter_size = gutter_size|default(4) %}
-  {% set column_count = column_count|default(4) %}
+{% for image in images %}
   <li class="mdc-image-list__item" style="width: calc(100% / {{ column_count|default(5) }}  - {{ gutter_size +  1/ column_count }}px); margin: {{ gutter_size/2 }}px;">
-    {% if variant == "masonry" %}
-    {{ image }}
-    {% else %}
     <div class="mdc-image-list__image-aspect-container">
     {{ image }}
     </div>
-    {% endif %}
     {% set index = loop.index0 %}
     {% if labels[index] %}
     <div class="mdc-image-list__supporting">
@@ -21,5 +18,5 @@
     </div>
     {% endif %}
   </li>
-  {% endfor %}
+{% endfor %}
 </ul>
