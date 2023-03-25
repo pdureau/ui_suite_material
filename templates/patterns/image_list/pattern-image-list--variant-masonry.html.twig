@@ -1,5 +1,5 @@
 {% set gutter_size = gutter_size|default(4) %}
-{% set column_count = column_count|default(4) %}
+{% set column_count = column_count|default(5) %}
 {% set masonry_style = 'column-count: ' ~ column_count ~ '; column-gap: ' ~ gutter_size ~ 'px;' %}
 <ul{{ attributes.addClass(['mdc-image-list', 'mdc-image-list--masonry']).setAttribute('style', masonry_style) }}>
 {% for image in images %}
@@ -8,7 +8,7 @@
     {% set index = loop.index0 %}
     {% if labels[index] %}
     <div class="mdc-image-list__supporting">
-      <span class="mdc-image-list__label">{{ labels[index]  }}</span>
+      <span class="mdc-image-list__label">{{ labels[index] }}</span>
     </div>
     {% endif %}
   </li>
