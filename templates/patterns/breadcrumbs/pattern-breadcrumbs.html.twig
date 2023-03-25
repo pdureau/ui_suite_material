@@ -1,4 +1,4 @@
-{% if variant != '' and variant|lower != 'default' %}
+{% if variant and variant|lower != 'default' %}
   {% set attributes = attributes.addClass('mdc-breadcrumbs--' ~ variant|lower|replace({'_': '-'})) %}
 {% endif %}
 

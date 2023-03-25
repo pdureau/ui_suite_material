@@ -1,4 +1,4 @@
-{% if variant != '' and variant|lower != 'default' %}
+{% if variant and variant|lower != 'default' %}
   {% set variants = variant|split('__') %}
   {% for variant in variants %}
     {% set attributes = attributes.addClass('mdc-chip-set--' ~ variant|lower|replace({'_': '-'})) %}
