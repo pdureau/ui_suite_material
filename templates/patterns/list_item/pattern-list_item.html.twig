@@ -3,16 +3,16 @@
 {% endif %}
 
 <{{ html_element|default("div") }} {{ attributes.addClass(["mdc-deprecated-list-item", "mdc-ripple-upgraded"]) }}>
-  {% if avatar  %}
+  {% if avatar %}
   <span class="mdc-deprecated-list-item__graphic" aria-hidden="true">
     {{ avatar }}
   </span>
-  {% endif  %}
-  {% if icon_before  %}
+  {% endif %}
+  {% if icon_before %}
   <span class="mdc-deprecated-list-item__graphic material-icons" aria-hidden="true">
     {{ icon_before }}
   </span>
-  {% endif  %}
+  {% endif %}
   {% if text and not secondary_text %}
   <span class="mdc-deprecated-list-item__text">{{ text }}</span>
   {% endif %}

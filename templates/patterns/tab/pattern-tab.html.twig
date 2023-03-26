@@ -11,10 +11,12 @@
   </span>
   {% if variant == 'active' %}
   <span class="mdc-tab-indicator mdc-tab-indicator--active">
-  {% else %}
-  <span class="mdc-tab-indicator">
-  {% endif %}
     <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
   </span>
+  {% else %}
+  <span class="mdc-tab-indicator">
+    <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+  </span>
+  {% endif %}
   <span class="mdc-tab__ripple"></span>
 </button>
